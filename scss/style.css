@@ -41,7 +41,7 @@ html {
 
 body {
   font-family: montserrat, Arial, helvetica, sans-serif;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   line-height: 1.7;
   display: flex;
   flex-direction: column;
@@ -133,7 +133,7 @@ header.banner .comp-logo {
   top: 0;
   left: 0;
   right: 0;
-  padding: 0.5em 2em;
+  padding: 0.2em 2em;
   display: flex;
   justify-content: space-between;
   z-index: 5;
@@ -188,14 +188,7 @@ header.banner #toggler {
   outline: 1px solid red;
   z-index: 6;
   opacity: 0;
-}
-header.banner #toggler:hover + .hamburger > div::before {
-  animation: flatline 1s ease-in-out infinite alternate;
-  right: 0;
-}
-header.banner #toggler:hover + .hamburger > div::after {
-  left: 0;
-  animation: flatline 1s ease-in-out infinite alternate;
+  cursor: pointer;
 }
 header.banner #toggler:checked + .hamburger > div {
   transform: rotate(135deg);
@@ -224,7 +217,7 @@ header.banner .mainlinks {
   width: 0;
   height: 100vh;
   overflow: hidden;
-  transition: width 250ms ease 300ms;
+  transition: width 250ms ease 410ms;
 }
 header.banner .mainlinks ul {
   list-style: none;
@@ -240,19 +233,19 @@ header.banner .mainlinks li {
   transition: transform 400ms ease;
 }
 header.banner .mainlinks li:nth-child(2) {
-  transition-delay: 50ms;
+  transition-delay: 80ms;
 }
 header.banner .mainlinks li:nth-child(3) {
-  transition-delay: 100ms;
+  transition-delay: 160ms;
 }
 header.banner .mainlinks li:nth-child(4) {
-  transition-delay: 150ms;
+  transition-delay: 240ms;
 }
 header.banner .mainlinks li:nth-child(5) {
-  transition-delay: 200ms;
+  transition-delay: 320ms;
 }
 header.banner .mainlinks li:nth-child(6) {
-  transition-delay: 250ms;
+  transition-delay: 400ms;
 }
 header.banner .mainlinks a {
   color: #eaeaeb;
@@ -306,14 +299,6 @@ header.banner .media-links::after {
   }
   100% {
     transform: rotate(90deg) translateX(20px);
-  }
-}
-@keyframes flatline {
-  0% {
-    width: 100%;
-  }
-  100% {
-    width: 20%;
   }
 }
 /* main styles */
@@ -538,6 +523,13 @@ footer.glossary {
   padding: 2em;
   margin-top: auto;
   height: 200px;
+}
+
+/* media queries */
+@media only screen and (max-width: 300px) {
+  body {
+    font-size: 0.7rem;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

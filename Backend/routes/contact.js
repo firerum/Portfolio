@@ -20,7 +20,7 @@ router.post("/", (req, res) => {
          <li>Email: ${email}</li>
       </ul>
       <div>
-         <h4>Message:</h4>
+         <h4>Message</h4>
          <p>${message}</p>
       </div>
    </div>`;
