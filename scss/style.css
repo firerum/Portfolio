@@ -79,10 +79,10 @@ img {
   height: auto;
 }
 
-input, textarea {
+input {
   appearance: none;
   -webkit-appearance: none;
-  padding: 0.7em 1em;
+  padding: 0.7em 3em;
   font-family: inherit;
   resize: none;
   border: none;
@@ -90,14 +90,26 @@ input, textarea {
   border: 1px solid #ccc;
 }
 
-button {
+textarea {
   appearance: none;
   -webkit-appearance: none;
-  padding: 0.7em 1em;
+  padding: 0.7em 3em;
   font-family: inherit;
   resize: none;
   border: none;
   border-radius: 2px;
+  padding-left: 1em;
+}
+
+button {
+  appearance: none;
+  -webkit-appearance: none;
+  padding: 0.7em 3em;
+  font-family: inherit;
+  resize: none;
+  border: none;
+  border-radius: 2px;
+  padding: 0.7em 1em;
   width: 100%;
   text-transform: capitalize;
   font-weight: 500;
@@ -306,6 +318,11 @@ main.content {
   padding: 4em 2em;
   text-align: center;
 }
+main.content section {
+  padding: 1em;
+  margin: 4rem 0;
+  background-color: #282B30;
+}
 main.content .about {
   display: flex;
   flex-direction: column;
@@ -326,11 +343,6 @@ main.content .about span {
   display: block;
   margin: 1rem 0;
 }
-main.content section {
-  padding: 1em;
-  margin: 4rem 0;
-  background-color: #282B30;
-}
 main.content .contact {
   margin: 4rem -2em;
   padding: 2em;
@@ -340,6 +352,15 @@ main.content .form-row {
   display: flex;
   flex-direction: column;
   margin-bottom: 1rem;
+  position: relative;
+}
+main.content .form-row i {
+  content: "";
+  position: absolute;
+  top: 61%;
+  left: 0;
+  padding: 0 0 0 1em;
+  color: #282B308f;
 }
 main.content input[type=text]::placeholder,
 main.content input[type=email]::placeholder,

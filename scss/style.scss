@@ -3,13 +3,19 @@
 @import "mixin";
 
 
-input, textarea {
+input {
     @include form-input;
      border: 1px solid #ccc;
  }
+
+textarea {
+    @include form-input;
+    padding-left: 1em;
+}
  
  button {
      @include form-input;
+     padding: 0.7em 1em;
      width: 100%;
      text-transform: capitalize;
      font-weight: 500;
@@ -241,6 +247,12 @@ main.content {
     padding: 4em $pry-padding;
     text-align: center;
 
+    section {
+        padding: 1em;
+        margin: 4rem 0;
+        background-color: #282B30;
+    }
+
     .about {
        display: flex;
        flex-direction: column;
@@ -265,12 +277,6 @@ main.content {
            margin: 1rem 0;
        }
     }
-    
-    section {
-        padding: 1em;
-        margin: 4rem 0;
-        background-color: #282B30;
-    }
 
     .contact {
         @include layout;
@@ -281,6 +287,16 @@ main.content {
         display: flex;
         flex-direction: column;
         margin-bottom: 1rem;
+        position: relative;
+
+        i {
+            content: "";
+            position: absolute;
+            top: 61%;
+            left: 0;
+            padding: 0 0 0 1em;
+            color: #282B308f;
+        }
     }
     
     input[type="text"]::placeholder,
