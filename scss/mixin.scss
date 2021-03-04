@@ -1,0 +1,38 @@
+@mixin hamburger {
+    position: absolute;
+    width: 25px;
+    height: 20px;
+    top: 50%;
+    right: 25px;
+    transform: translateY(-50%);
+}
+
+@mixin hamburg-children {
+    position: absolute;
+    width: 100%;
+    height: inherit;
+    background-color: inherit;
+    border-radius: $pry-radius;
+    transition: transform 250ms ease-in;
+}
+
+@mixin flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin form-input {
+    appearance: none;
+    -webkit-appearance: none;
+    padding: 0.7em 1em;
+    font-family: inherit;
+    resize: none;
+    border: none;
+    border-radius: 2px;
+}
+
+@mixin layout {
+    margin: 4rem -2em;
+    padding: 2em;
+}
