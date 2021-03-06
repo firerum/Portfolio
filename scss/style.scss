@@ -50,7 +50,7 @@ header.banner {
     }
     
     .comp-logo {
-        background-color: #000;
+        background-color: #0f1626;
         position: fixed;
         top: 0;
         left: 0;
@@ -59,6 +59,7 @@ header.banner {
         display: flex;
         justify-content: space-between;
         z-index: 5;
+        transition: opacity 400ms ease;
         
         > h1 {
             margin-bottom: 0;
@@ -151,7 +152,7 @@ header.banner {
         li {
             margin: 2rem 0;
             transform: translateX(-500px);
-            transition: transform 400ms ease;
+            transition: transform 600ms ease;
 
             &:nth-child(2) {
                 transition-delay: 80ms;
@@ -245,6 +246,7 @@ header.banner {
 /* main styles */
 main.content {
     padding: 4em $pry-padding;
+    padding-bottom: 0;
     text-align: center;
 
     section {
@@ -253,7 +255,8 @@ main.content {
         background-color: #282B30;
     }
 
-    .about {
+    #about {
+       @include layout;
        display: flex;
        flex-direction: column;
 
@@ -266,6 +269,7 @@ main.content {
 
        h2 {
            order: 2;
+           margin-bottom: $margin-bottom;
        }
 
        .about_text {
@@ -278,41 +282,7 @@ main.content {
        }
     }
 
-    .contact {
-        @include layout;
-        text-align: left;
-    }
-    
-    .form-row {
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 1rem;
-        position: relative;
-
-        i {
-            content: "";
-            position: absolute;
-            top: 61%;
-            left: 0;
-            padding: 0 0 0 1em;
-            color: #282B308f;
-        }
-    }
-    
-    input[type="text"]::placeholder,
-    input[type="email"]::placeholder,
-    textarea::placeholder {
-        font-size: 11px;
-        transition: transform 250ms ease-in;
-    }
-
-    label {
-        margin-bottom: 3px;
-        font-weight: 500;
-        text-transform: capitalize;
-    }
-
-    .services {
+    #services {
         background-color: initial;
         position: relative;
         padding: 0 0 1em 2em;
@@ -340,7 +310,9 @@ main.content {
         }
 
         h2 {
-            font-size: 1.6rem;
+            font-size: 2rem;
+            margin-bottom: $margin-bottom;
+            color: #ce9e62;
         }
 
         > div {
@@ -353,7 +325,8 @@ main.content {
                 content: "";
                 position: absolute;
                 top: 0;
-                left: -43px;
+                left: 0;
+                transform: translateX(-120%);
                 width: 30px;
                 height: 30px;
                 border-radius: 50%;
@@ -365,8 +338,8 @@ main.content {
             &::after {
                 content: "\f16c";
                 position: absolute;
-                top: 6px;
-                left: -37px;
+                top: 6.5px;
+                left: -39px;
                 width: 25px;
                 height: 25px;
                 border-radius: 50%;
@@ -402,36 +375,56 @@ main.content {
 
     }
 
-    .skills {
+    #skills {
         @include layout;
     }
 
-    .portfolio {
+    #portfolio {
         @include layout;
 
+        h2 {
+            margin-bottom: $margin-bottom;
+        }
+
         .project {
-            display: flex;
-            flex-direction: column;
-            height: 200px;
-            outline: 1px solid green;
             margin-bottom: 2rem;
+            height: 300px;
+            position: relative; 
+            outline: $debugger;
+
+            &:hover > .wrapper {
+                height: 100%;
+            }
         }
 
         img {
-            height: 70%;
-            border-bottom: $debugger;
+            z-index: 2;
+            height: 100%;
+            border-radius: $pry-radius;
         }
 
         .wrapper {
-            height: 30%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            overflow: hidden;
+            background-color: #22252A;
+            transition: height 300ms ease;
         }
     }
 
-    .testimonial { 
+    #testimonial { 
         @include flex;
         flex-direction: column;
         position: relative;
-        margin: 4rem -2em;
+        @include layout;
+        color: #fff;
+
+        h2 {
+            margin-bottom: $margin-bottom;
+        }
        
         .slider {
             position: relative;
@@ -491,6 +484,45 @@ main.content {
         }
     }
 
+    #contact {
+        @include layout;
+        text-align: left;
+
+        h2 {
+            text-align: center;
+            margin-bottom: $margin-bottom;
+        }
+
+        .form-row {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        i {
+            content: "";
+            position: absolute;
+            top: 61%;
+            left: 0;
+            padding: 0 0 0 1em;
+            color: #282B308f;
+        }
+        
+        input[type="text"]::placeholder,
+        input[type="email"]::placeholder,
+        textarea::placeholder {
+            font-size: 11px;
+        }
+    
+        label {
+            margin-bottom: 3px;
+            font-weight: 500;
+            text-transform: capitalize;
+        }
+
+    }
+
 }
 
 @keyframes move {
@@ -506,9 +538,19 @@ main.content {
 
 /* footer styles */
 footer.glossary {
+    text-align: center;
     padding: $pry-padding;
-    margin-top: auto;
-    height: 200px;
+    @include flex;
+    flex-direction: column;
+    background-color: #0f1626;
+    
+    p:nth-of-type(2) {
+        font-size: 0.7rem;
+    }
+
+    .sec-links {
+        margin-bottom: 1rem;;
+    }
 }
 
 

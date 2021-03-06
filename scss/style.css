@@ -76,7 +76,6 @@ ul {
 
 img {
   max-width: 100%;
-  height: auto;
 }
 
 input {
@@ -140,7 +139,7 @@ header.banner::after {
   right: 0;
 }
 header.banner .comp-logo {
-  background-color: #000;
+  background-color: #0f1626;
   position: fixed;
   top: 0;
   left: 0;
@@ -149,6 +148,7 @@ header.banner .comp-logo {
   display: flex;
   justify-content: space-between;
   z-index: 5;
+  transition: opacity 400ms ease;
 }
 header.banner .comp-logo > h1 {
   margin-bottom: 0;
@@ -242,7 +242,7 @@ header.banner .mainlinks ul {
 header.banner .mainlinks li {
   margin: 2rem 0;
   transform: translateX(-500px);
-  transition: transform 400ms ease;
+  transition: transform 600ms ease;
 }
 header.banner .mainlinks li:nth-child(2) {
   transition-delay: 80ms;
@@ -316,6 +316,7 @@ header.banner .media-links::after {
 /* main styles */
 main.content {
   padding: 4em 2em;
+  padding-bottom: 0;
   text-align: center;
 }
 main.content section {
@@ -323,62 +324,39 @@ main.content section {
   margin: 4rem 0;
   background-color: #282B30;
 }
-main.content .about {
+main.content #about {
+  margin: 0 -2em;
+  padding: 4em 2em;
   display: flex;
   flex-direction: column;
 }
-main.content .about img {
+main.content #about h2 {
+  color: #ce9e62;
+  font-size: 2rem;
+}
+main.content #about img {
   outline: 1px solid #ccc;
   outline-offset: 3px;
   order: 1;
   margin-bottom: 1rem;
 }
-main.content .about h2 {
+main.content #about h2 {
   order: 2;
+  margin-bottom: 3rem;
 }
-main.content .about .about_text {
+main.content #about .about_text {
   order: 3;
 }
-main.content .about span {
+main.content #about span {
   display: block;
   margin: 1rem 0;
 }
-main.content .contact {
-  margin: 4rem -2em;
-  padding: 2em;
-  text-align: left;
-}
-main.content .form-row {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 1rem;
-  position: relative;
-}
-main.content .form-row i {
-  content: "";
-  position: absolute;
-  top: 61%;
-  left: 0;
-  padding: 0 0 0 1em;
-  color: #282B308f;
-}
-main.content input[type=text]::placeholder,
-main.content input[type=email]::placeholder,
-main.content textarea::placeholder {
-  font-size: 11px;
-  transition: transform 250ms ease-in;
-}
-main.content label {
-  margin-bottom: 3px;
-  font-weight: 500;
-  text-transform: capitalize;
-}
-main.content .services {
+main.content #services {
   background-color: initial;
   position: relative;
   padding: 0 0 1em 2em;
 }
-main.content .services::before {
+main.content #services::before {
   content: "";
   position: absolute;
   top: 0;
@@ -387,7 +365,7 @@ main.content .services::before {
   width: 3px;
   background-color: #282B30;
 }
-main.content .services::after {
+main.content #services::after {
   content: "";
   position: absolute;
   top: 99.8%;
@@ -398,19 +376,22 @@ main.content .services::after {
   border-radius: 50%;
   border: 3px solid #282B30;
 }
-main.content .services h2 {
-  font-size: 1.6rem;
+main.content #services h2 {
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  color: #ce9e62;
 }
-main.content .services > div {
+main.content #services > div {
   position: relative;
   padding-left: 5px;
   filter: drop-shadow(1px 2px 3px #333) drop-shadow(-1px -1px 2px #000);
 }
-main.content .services > div::before {
+main.content #services > div::before {
   content: "";
   position: absolute;
   top: 0;
-  left: -43px;
+  left: 0;
+  transform: translateX(-120%);
   width: 30px;
   height: 30px;
   border-radius: 50%;
@@ -418,11 +399,11 @@ main.content .services > div::before {
   clip-path: initial;
   z-index: 3;
 }
-main.content .services > div::after {
+main.content #services > div::after {
   content: "";
   position: absolute;
-  top: 6px;
-  left: -37px;
+  top: 6.5px;
+  left: -39px;
   width: 25px;
   height: 25px;
   border-radius: 50%;
@@ -430,10 +411,10 @@ main.content .services > div::after {
   font-family: "Font Awesome 5 Brands";
   transition: transform 500ms ease;
 }
-main.content .services > div:hover::after {
+main.content #services > div:hover::after {
   transform: rotate(360deg) scale(0.8);
 }
-main.content .services .design {
+main.content #services .design {
   text-align: center;
   position: relative;
   padding: 1em 2em;
@@ -443,50 +424,80 @@ main.content .services .design {
   clip-path: polygon(10px 0px, 10px 10px, 0px 15px, 10px 25px, 10px 100%, 100% 100%, 100% 0%);
   position: relative;
 }
-main.content .services h3 {
+main.content #services h3 {
   margin: 1rem;
   font-size: 1.2rem;
 }
-main.content .services i {
+main.content #services i {
   font-size: 2rem;
 }
-main.content .skills {
-  margin: 4rem -2em;
-  padding: 2em;
+main.content #skills {
+  margin: 0 -2em;
+  padding: 4em 2em;
 }
-main.content .portfolio {
-  margin: 4rem -2em;
-  padding: 2em;
+main.content #skills h2 {
+  color: #ce9e62;
+  font-size: 2rem;
 }
-main.content .portfolio .project {
-  display: flex;
-  flex-direction: column;
-  height: 200px;
-  outline: 1px solid green;
+main.content #portfolio {
+  margin: 0 -2em;
+  padding: 4em 2em;
+}
+main.content #portfolio h2 {
+  color: #ce9e62;
+  font-size: 2rem;
+}
+main.content #portfolio h2 {
+  margin-bottom: 3rem;
+}
+main.content #portfolio .project {
   margin-bottom: 2rem;
+  height: 300px;
+  position: relative;
+  outline: 1px solid red;
 }
-main.content .portfolio img {
-  height: 70%;
-  border-bottom: 1px solid red;
+main.content #portfolio .project:hover > .wrapper {
+  height: 100%;
 }
-main.content .portfolio .wrapper {
-  height: 30%;
+main.content #portfolio img {
+  z-index: 2;
+  height: 100%;
+  border-radius: 5px;
 }
-main.content .testimonial {
+main.content #portfolio .wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  background-color: #22252A;
+  transition: height 300ms ease;
+}
+main.content #testimonial {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   position: relative;
-  margin: 4rem -2em;
+  margin: 0 -2em;
+  padding: 4em 2em;
+  color: #fff;
 }
-main.content .testimonial .slider {
+main.content #testimonial h2 {
+  color: #ce9e62;
+  font-size: 2rem;
+}
+main.content #testimonial h2 {
+  margin-bottom: 3rem;
+}
+main.content #testimonial .slider {
   position: relative;
   width: 250px;
   height: 400px;
   overflow: hidden;
 }
-main.content .testimonial .slide {
+main.content #testimonial .slide {
   position: absolute;
   top: 0;
   left: 0;
@@ -495,19 +506,19 @@ main.content .testimonial .slide {
   opacity: 0;
   transition: opacity 600ms ease;
 }
-main.content .testimonial .slide > p {
+main.content #testimonial .slide > p {
   transform: translateY(200px);
   opacity: 0;
   transition: transform 1000ms ease 300ms;
 }
-main.content .testimonial .current > p {
+main.content #testimonial .current > p {
   opacity: 1;
   transform: translateY(0);
 }
-main.content .testimonial .current {
+main.content #testimonial .current {
   opacity: 1;
 }
-main.content .testimonial button {
+main.content #testimonial button {
   position: absolute;
   top: 35%;
   width: 30px;
@@ -521,14 +532,51 @@ main.content .testimonial button {
   align-items: center;
   background-color: rgba(0, 0, 0, 0.25);
 }
-main.content .testimonial button:hover {
+main.content #testimonial button:hover {
   background-color: rgba(0, 0, 0, 0.8);
 }
-main.content .testimonial #next {
+main.content #testimonial #next {
   right: 10px;
 }
-main.content .testimonial #prev {
+main.content #testimonial #prev {
   left: 10px;
+}
+main.content #contact {
+  margin: 0 -2em;
+  padding: 4em 2em;
+  text-align: left;
+}
+main.content #contact h2 {
+  color: #ce9e62;
+  font-size: 2rem;
+}
+main.content #contact h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+main.content #contact .form-row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  position: relative;
+}
+main.content #contact i {
+  content: "";
+  position: absolute;
+  top: 61%;
+  left: 0;
+  padding: 0 0 0 1em;
+  color: #282B308f;
+}
+main.content #contact input[type=text]::placeholder,
+main.content #contact input[type=email]::placeholder,
+main.content #contact textarea::placeholder {
+  font-size: 11px;
+}
+main.content #contact label {
+  margin-bottom: 3px;
+  font-weight: 500;
+  text-transform: capitalize;
 }
 
 @keyframes move {
@@ -541,9 +589,19 @@ main.content .testimonial #prev {
 }
 /* footer styles */
 footer.glossary {
+  text-align: center;
   padding: 2em;
-  margin-top: auto;
-  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #0f1626;
+}
+footer.glossary p:nth-of-type(2) {
+  font-size: 0.7rem;
+}
+footer.glossary .sec-links {
+  margin-bottom: 1rem;
 }
 
 /* media queries */

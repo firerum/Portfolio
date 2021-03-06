@@ -105,6 +105,27 @@ function contactFormHandler() {
    form.addEventListener("submit", processForm);
 } 
 
+/* function autoHideScroll() {
+   // initial position of the header, which is 0,0
+   let prevScrollpos = window.pageYOffset;
+
+   function handleScroll() {
+      let currentScrollPos = window.pageYOffset;
+      const nav = document.querySelector(".comp-logo");
+
+      if (prevScrollpos >= currentScrollPos) {
+         nav.classList.remove("visible");
+      } else {
+         nav.classList.add("visible");
+      }
+
+      prevScrollpos = currentScrollPos;
+      console.log(`prev: ${prevScrollpos} current ${currentScrollPos}`);
+   }
+
+   window.addEventListener("scroll", handleScroll);
+} */
+
 // call the functions
 exitFixedLink();
 sliders();
