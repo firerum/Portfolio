@@ -390,7 +390,6 @@ main.content {
             margin-bottom: 2rem;
             height: 300px;
             position: relative; 
-            outline: $debugger;
 
             &:hover > .wrapper {
                 height: 100%;
@@ -412,6 +411,9 @@ main.content {
             overflow: hidden;
             background-color: #22252A;
             transition: height 300ms ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
     }
 

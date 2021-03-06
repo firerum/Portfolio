@@ -454,7 +454,6 @@ main.content #portfolio .project {
   margin-bottom: 2rem;
   height: 300px;
   position: relative;
-  outline: 1px solid red;
 }
 main.content #portfolio .project:hover > .wrapper {
   height: 100%;
@@ -473,6 +472,9 @@ main.content #portfolio .wrapper {
   overflow: hidden;
   background-color: #22252A;
   transition: height 300ms ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 main.content #testimonial {
   display: flex;
