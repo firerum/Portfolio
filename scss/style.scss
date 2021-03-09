@@ -25,7 +25,8 @@ textarea {
     width: 100%;
     max-width: 1020px;
     margin: 0 auto;
-    background-color: #22252A;
+    /* background-color: #22252A; */
+    background-color: #141d30;
 }
 
 
@@ -66,6 +67,7 @@ header.banner {
 
             a {
                 padding: 0;
+                color: #ce9e62;
             }
         }
     }
@@ -250,7 +252,7 @@ main.content {
     section {
         padding: 1em;
         margin: 4rem 0;
-        background-color: #282B30;
+        background-color: #141d30;
     }
 
     #about {
@@ -292,7 +294,7 @@ main.content {
             left: 0;
             height: 100%;
             width: 3px;
-            background-color: #282B30;
+            background-color: #0f1626;
         }
 
         &::after {
@@ -304,7 +306,7 @@ main.content {
             width: 20px;
             height: 20px;
             border-radius: 50%;
-            border: 3px solid #282B30;
+            border: 3px solid #0f1626;
         }
 
         h2 {
@@ -316,8 +318,8 @@ main.content {
         > div {
             position: relative;
             padding-left: 5px;
-            filter: drop-shadow(1px 2px 3px #333)
-                    drop-shadow(-1px -1px 2px #000);
+            /* filter: drop-shadow(1px 0px 2px #313030)
+                    drop-shadow(-1px -1px 2px #0f141f); */
 
             &::before {
                 content: "";
@@ -328,7 +330,7 @@ main.content {
                 width: 30px;
                 height: 30px;
                 border-radius: 50%;
-                border: 4px solid #282B30;
+                border: 4px solid #0f1626;
                 clip-path: initial;
                 z-index: 3;
             }
@@ -340,8 +342,9 @@ main.content {
                 left: -39px;
                 width: 25px;
                 height: 25px;
+                color: #ce9e62;
                 border-radius: 50%;
-                background-color: blue;
+                background-color: #141d30;
                 font-family: "Font Awesome 5 Brands";
                 transition: transform 500ms ease;
             }
@@ -352,29 +355,33 @@ main.content {
         }
 
         .design {
-            text-align: center;
+            text-align: left;
             position: relative;
             padding: 1em 2em;
             margin-bottom: 1rem;
             border-radius: $pry-radius;
-            background-color: #282B30;
+            background-color: #0f1626;
             clip-path: polygon(10px 0px, 10px 10px, 0px 15px, 10px 25px, 10px 100%, 100% 100%, 100% 0% );
             position: relative;
         }
 
         h3 {
             margin: 1rem;
+            margin-left: 0;
             font-size: 1.2rem;
+            color: #ce9e62;
         }
 
         i {
-            font-size: 2rem;
+            font-size: 2.3rem;
+            
         }
 
     }
 
     #skills {
         @include layout;
+        background-color: #0f1626;
     }
 
     #portfolio {
@@ -418,6 +425,7 @@ main.content {
         position: relative;
         @include layout;
         color: #fff;
+        background-color: #0f1626;
 
         h2 {
             margin-bottom: $margin-bottom;
@@ -539,6 +547,10 @@ footer.glossary {
     padding: $pry-padding;
     @include flex(column);
     background-color: #0f1626;
+
+    h2 {
+        color: #ce9e62;
+    }
     
     p:nth-of-type(2) {
         font-size: 0.7rem;
