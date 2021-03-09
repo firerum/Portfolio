@@ -19,14 +19,15 @@ textarea {
      width: 100%;
      text-transform: capitalize;
      font-weight: 500;
+     color: inherit;
+     background-color: $deep-blue;
  }
 
 .container {
     width: 100%;
     max-width: 1020px;
     margin: 0 auto;
-    /* background-color: #22252A; */
-    background-color: #141d30;
+    background-color: $dark-blue;
 }
 
 
@@ -51,7 +52,7 @@ header.banner {
     }
     
     .comp-logo {
-        background-color: #0f1626;
+        background-color: $deep-blue;
         position: fixed;
         top: 0;
         left: 0;
@@ -67,7 +68,7 @@ header.banner {
 
             a {
                 padding: 0;
-                color: #ce9e62;
+                color: $deep-gold;
             }
         }
     }
@@ -252,7 +253,6 @@ main.content {
     section {
         padding: 1em;
         margin: 4rem 0;
-        background-color: #141d30;
     }
 
     #about {
@@ -283,7 +283,7 @@ main.content {
     }
 
     #services {
-        background-color: initial;
+        background-color: $dark-blue;
         position: relative;
         padding: 0 0 1em 2em;
 
@@ -294,7 +294,7 @@ main.content {
             left: 0;
             height: 100%;
             width: 3px;
-            background-color: #0f1626;
+            background-color: $deep-blue;
         }
 
         &::after {
@@ -306,13 +306,13 @@ main.content {
             width: 20px;
             height: 20px;
             border-radius: 50%;
-            border: 3px solid #0f1626;
+            border: 3px solid $deep-blue;
         }
 
         h2 {
             font-size: 2rem;
             margin-bottom: $margin-bottom;
-            color: #ce9e62;
+            color: $deep-gold;
         }
 
         > div {
@@ -330,7 +330,7 @@ main.content {
                 width: 30px;
                 height: 30px;
                 border-radius: 50%;
-                border: 4px solid #0f1626;
+                border: 4px solid $deep-blue;
                 clip-path: initial;
                 z-index: 3;
             }
@@ -342,9 +342,9 @@ main.content {
                 left: -39px;
                 width: 25px;
                 height: 25px;
-                color: #ce9e62;
+                color: $deep-gold;
                 border-radius: 50%;
-                background-color: #141d30;
+                background-color: $dark-blue;
                 font-family: "Font Awesome 5 Brands";
                 transition: transform 500ms ease;
             }
@@ -360,7 +360,7 @@ main.content {
             padding: 1em 2em;
             margin-bottom: 1rem;
             border-radius: $pry-radius;
-            background-color: #0f1626;
+            background-color: $deep-blue;
             clip-path: polygon(10px 0px, 10px 10px, 0px 15px, 10px 25px, 10px 100%, 100% 100%, 100% 0% );
             position: relative;
         }
@@ -369,7 +369,7 @@ main.content {
             margin: 1rem;
             margin-left: 0;
             font-size: 1.2rem;
-            color: #ce9e62;
+            color: $deep-gold;
         }
 
         i {
@@ -381,7 +381,7 @@ main.content {
 
     #skills {
         @include layout;
-        background-color: #0f1626;
+        background-color: $deep-blue;
     }
 
     #portfolio {
@@ -414,7 +414,7 @@ main.content {
             width: 100%;
             height: 0;
             overflow: hidden;
-            background-color: #22252A;
+            background-color: $deep-blue;
             transition: height 300ms ease;
             @include flex(column);
         }
@@ -425,7 +425,7 @@ main.content {
         position: relative;
         @include layout;
         color: #fff;
-        background-color: #0f1626;
+        background-color: $deep-blue;
 
         h2 {
             margin-bottom: $margin-bottom;
@@ -526,6 +526,10 @@ main.content {
             text-transform: capitalize;
         }
 
+        button:hover {
+          background-color: lighten($deep-blue, 7);
+        }
+
     }
 
 }
@@ -546,10 +550,10 @@ footer.glossary {
     text-align: center;
     padding: $pry-padding;
     @include flex(column);
-    background-color: #0f1626;
+    background-color: $deep-blue;
 
     h2 {
-        color: #ce9e62;
+        color: $deep-gold;
     }
     
     p:nth-of-type(2) {
