@@ -81,7 +81,7 @@ function contactFormHandler() {
          message: document.querySelector("#message").value
       };
 
-      // destructure the contact object for the server
+      // assign the raw object to the contact object for the server
       const contactObject = rawObject;
 
       // endpoint

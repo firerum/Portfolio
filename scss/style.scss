@@ -72,7 +72,7 @@ header.banner {
     
     .hamburger {
         @include hamburger;
-        @include flex;
+        @include flex(row);
         z-index: 3;
     }
     
@@ -142,9 +142,8 @@ header.banner {
     
         ul {
             list-style: none;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            @include flex(column);
+            justify-content: flex-start;
             width: 100%;
             height: 100%;
         }
@@ -205,8 +204,7 @@ header.banner {
     }
 
     .media-links {
-        display: flex;
-        flex-direction: column;
+        @include flex(column);
         position: absolute;
         gap: 10px;
         top: 50%;
@@ -411,15 +409,12 @@ main.content {
             overflow: hidden;
             background-color: #22252A;
             transition: height 300ms ease;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+            @include flex(column);
         }
     }
 
     #testimonial { 
-        @include flex;
-        flex-direction: column;
+        @include flex(column);
         position: relative;
         @include layout;
         color: #fff;
@@ -469,7 +464,7 @@ main.content {
             color: #fff;
             font-weight: bold;
             cursor: pointer;
-            @include flex;
+            @include flex(row);
             background-color: rgba(0,0,0,.25);
 
             &:hover {
@@ -542,8 +537,7 @@ main.content {
 footer.glossary {
     text-align: center;
     padding: $pry-padding;
-    @include flex;
-    flex-direction: column;
+    @include flex(column);
     background-color: #0f1626;
     
     p:nth-of-type(2) {

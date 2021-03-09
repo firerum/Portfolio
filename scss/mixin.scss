@@ -16,8 +16,9 @@
     transition: transform 250ms ease-in;
 }
 
-@mixin flex {
+@mixin flex($direction) {
     display: flex;
+    flex-direction: $direction;
     justify-content: center;
     align-items: center;
 }
