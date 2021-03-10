@@ -380,6 +380,27 @@ main.content {
     #skills {
         @include layout;
         background-color: $deep-blue;
+        @include flex(column);
+
+        /* temporary styling */
+
+        li {
+            display: grid;
+            grid-template-columns: 150px 150px;
+            justify-items: center;
+            align-items: center;
+            padding: 1em;
+        }
+
+        span:nth-child(2) {
+            justify-self: start;
+        }
+
+        i {
+            font-size: 3rem;
+        }
+
+        /* end of temporary styling */
     }
 
     #portfolio {
@@ -410,11 +431,12 @@ main.content {
             top: 0;
             left: 0;
             width: 100%;
-            height: 0;
+            height: 100%;
             overflow: hidden;
             background-color: $deep-blue;
             transition: height 300ms ease;
             @include flex(column);
+            z-index: 3;
         }
     }
 

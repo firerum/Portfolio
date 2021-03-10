@@ -443,10 +443,29 @@ main.content #skills {
   margin: 0 -2em;
   padding: 4em 2em;
   background-color: #0f1626;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* temporary styling */
+  /* end of temporary styling */
 }
 main.content #skills h2 {
   color: #ce9e62;
   font-size: 2rem;
+}
+main.content #skills li {
+  display: grid;
+  grid-template-columns: 150px 150px;
+  justify-items: center;
+  align-items: center;
+  padding: 1em;
+}
+main.content #skills span:nth-child(2) {
+  justify-self: start;
+}
+main.content #skills i {
+  font-size: 3rem;
 }
 main.content #portfolio {
   margin: 0 -2em;
@@ -477,7 +496,7 @@ main.content #portfolio .wrapper {
   top: 0;
   left: 0;
   width: 100%;
-  height: 0;
+  height: 100%;
   overflow: hidden;
   background-color: #0f1626;
   transition: height 300ms ease;
@@ -485,6 +504,7 @@ main.content #portfolio .wrapper {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  z-index: 3;
 }
 main.content #testimonial {
   display: flex;
