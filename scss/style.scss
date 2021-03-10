@@ -318,8 +318,8 @@ main.content {
         > div {
             position: relative;
             padding-left: 5px;
-            /* filter: drop-shadow(1px 0px 2px #313030)
-                    drop-shadow(-1px -1px 2px #0f141f); */
+            filter: drop-shadow(1px 0px 2px #353535)
+                    drop-shadow(-2px -1px 4px $deep-blue);
 
             &::before {
                 content: "";
@@ -342,9 +342,9 @@ main.content {
                 left: -39px;
                 width: 25px;
                 height: 25px;
-                color: $deep-gold;
+                color: #ccc;
                 border-radius: 50%;
-                background-color: $dark-blue;
+                background-color: rgba(41, 41, 167);
                 font-family: "Font Awesome 5 Brands";
                 transition: transform 500ms ease;
             }
@@ -426,6 +426,7 @@ main.content {
         @include layout;
         color: #fff;
         background-color: $deep-blue;
+        padding-bottom: 0;
 
         h2 {
             margin-bottom: $margin-bottom;
@@ -434,7 +435,7 @@ main.content {
         .slider {
             position: relative;
             width: 250px;
-            height: 400px;
+            height: 450px;
             overflow: hidden;
         }
         
@@ -446,21 +447,25 @@ main.content {
             height: 100%;
             opacity: 0;
             transition: opacity 600ms ease;
-        }
-        
-        .slide > p {
-            transform: translateY(200px);
-            opacity: 0;
-            transition: transform 1000ms ease 300ms;
-        }
-        
-        .current > p {
-            opacity: 1;
-            transform: translateY(0);
+
+            > h5 {
+                font-size: 1rem;
+            }
+
+            > p {
+                transform: translateY(200px);
+                opacity: 0;
+                transition: transform 1000ms ease 300ms;
+            }
         }
         
         .current {
             opacity: 1;
+
+            > p {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         
         button {

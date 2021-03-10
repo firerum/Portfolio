@@ -391,8 +391,7 @@ main.content #services h2 {
 main.content #services > div {
   position: relative;
   padding-left: 5px;
-  /* filter: drop-shadow(1px 0px 2px #313030)
-          drop-shadow(-1px -1px 2px #0f141f); */
+  filter: drop-shadow(1px 0px 2px #353535) drop-shadow(-2px -1px 4px #0f1626);
 }
 main.content #services > div::before {
   content: "";
@@ -414,9 +413,9 @@ main.content #services > div::after {
   left: -39px;
   width: 25px;
   height: 25px;
-  color: #ce9e62;
+  color: #ccc;
   border-radius: 50%;
-  background-color: #141d30;
+  background-color: #2929a7;
   font-family: "Font Awesome 5 Brands";
   transition: transform 500ms ease;
 }
@@ -499,6 +498,7 @@ main.content #testimonial {
   padding: 4em 2em;
   color: #fff;
   background-color: #0f1626;
+  padding-bottom: 0;
 }
 main.content #testimonial h2 {
   color: #ce9e62;
@@ -510,7 +510,7 @@ main.content #testimonial h2 {
 main.content #testimonial .slider {
   position: relative;
   width: 250px;
-  height: 400px;
+  height: 450px;
   overflow: hidden;
 }
 main.content #testimonial .slide {
@@ -522,17 +522,20 @@ main.content #testimonial .slide {
   opacity: 0;
   transition: opacity 600ms ease;
 }
+main.content #testimonial .slide > h5 {
+  font-size: 1rem;
+}
 main.content #testimonial .slide > p {
   transform: translateY(200px);
   opacity: 0;
   transition: transform 1000ms ease 300ms;
 }
+main.content #testimonial .current {
+  opacity: 1;
+}
 main.content #testimonial .current > p {
   opacity: 1;
   transform: translateY(0);
-}
-main.content #testimonial .current {
-  opacity: 1;
 }
 main.content #testimonial button {
   position: absolute;
