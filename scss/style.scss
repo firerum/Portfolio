@@ -393,7 +393,8 @@ main.content {
         }
 
         span:nth-child(2) {
-            justify-self: start;
+            justify-self: left;
+            text-transform: capitalize;
         }
 
         i {

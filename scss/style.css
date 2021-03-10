@@ -462,7 +462,8 @@ main.content #skills li {
   padding: 1em;
 }
 main.content #skills span:nth-child(2) {
-  justify-self: start;
+  justify-self: left;
+  text-transform: capitalize;
 }
 main.content #skills i {
   font-size: 3rem;
