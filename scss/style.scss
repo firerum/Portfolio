@@ -102,7 +102,6 @@ header.banner {
      
     #toggler {
         @include hamburger;
-        outline: $debugger;
         z-index: 6;
         opacity: 0;
         cursor: pointer;
@@ -115,7 +114,6 @@ header.banner {
         &:checked + .hamburger > div:after {
             top: 0;
             transform: rotate(90deg);
-            animation: initial;
         }
         
         &:checked:hover + .hamburger > div {

@@ -201,7 +201,6 @@ header.banner #toggler {
   top: 50%;
   right: 25px;
   transform: translateY(-50%);
-  outline: 1px solid red;
   z-index: 6;
   opacity: 0;
   cursor: pointer;
@@ -212,7 +211,6 @@ header.banner #toggler:checked + .hamburger > div {
 header.banner #toggler:checked + .hamburger > div::before, header.banner #toggler:checked + .hamburger > div:after {
   top: 0;
   transform: rotate(90deg);
-  animation: initial;
 }
 header.banner #toggler:checked:hover + .hamburger > div {
   transform: rotate(45deg);
