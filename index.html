@@ -48,9 +48,9 @@
             
             <main class="content">
                 <article id="about">
-                    <h2>About Me</h2>
                     <img src="./images/hooded-unsplash.jpg" alt="adewuyi">
                     <div class="about_text">
+                        <h2>About Me</h2>
                         <span>Full stack developer</span>
                         <p> I am passionate about bringing the technical, as well as aesthetic visual facets of
                         digital products to life. As a passionate web developer, I care deeply about optimum
@@ -163,18 +163,24 @@
                     <div class="slider">
                         <div class="slide current">
                             <img src="images/justin.jpg" alt="">
-                            <h5>Justin Treadeur</h5>
-                            <p>"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora atque, reprehenderit non animi dicta architecto illum blanditiis repellat porro a."</p>
+                            <div class="div">
+                                <h5>Justin Treadeur</h5>
+                                <p>"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora atque, reprehenderit non animi dicta architecto illum blanditiis repellat porro a."</p>
+                            </div>
                         </div>
                         <div class="slide">
                             <img src="images/johndoe.jpg" alt="">
-                            <h5>John Doe</h5>
-                            <p>"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut nisi impedit dolorem quae nobis sunt sapiente aspernatur quasi temporibus ullam!"</p>
+                            <div class="div">
+                                <h5>John Doe</h5>
+                                <p>"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut nisi impedit dolorem quae nobis sunt sapiente aspernatur quasi temporibus ullam!"</p>
+                            </div>
                         </div>
                         <div class="slide">
                             <img src="images/tim.jpg" alt="">
-                            <h5>Tim Cook</h5>
-                            <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum molestiae earum quis laboriosam qui? Laudantium placeat veniam libero numquam alias!"</p>
+                            <div class="div">
+                                <h5>Tim Cook</h5>
+                                <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum molestiae earum quis laboriosam qui? Laudantium placeat veniam libero numquam alias!"</p>
+                            </div>
                         </div>
                     </div>
                     <button id="next"><i class="fas fa-long-arrow-alt-right"></i></button>
@@ -183,6 +189,21 @@
 
                 <section id="contact">
                     <h2>Contact</h2>
+                    <div class="contact-info">
+                        <h3>Contact Information</h3>
+                        <div class="contact-flex">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>Ikeja, Lagos <br>Nigeria.</p>
+                        </div>
+                        <div class="contact-flex">
+                            <i class="fas fa-phone-alt"></i>
+                            <a href="tel:+2348032689453">(+234) 0803-268-943</a>
+                        </div>
+                        <div class="contact-flex">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:ademuyiwaadewuyi@gmail.com">ademuyiwaadewuyi@gmail.com</a>
+                        </div>
+                    </div>
                     <form action="/contact-form" method="POST" id="contact-form">
                         <h3>Get in touch</h3>
                         <div class="form-row">

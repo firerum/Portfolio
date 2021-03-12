@@ -47,6 +47,7 @@ body {
   flex-direction: column;
   height: 100%;
   color: #eaeaeb;
+  background-color: #141d30;
 }
 
 a {
@@ -116,13 +117,12 @@ button {
   background-color: #0f1626;
 }
 
-.container {
-  width: 100%;
-  max-width: 1020px;
-  margin: 0 auto;
-  background-color: #141d30;
-}
-
+/* .container {
+    width: 100%;
+    max-width: 1020px;
+    margin: 0 auto;
+    background-color: $dark-blue;
+} */
 /* header styles */
 header.banner {
   height: 70vh;
@@ -330,6 +330,7 @@ main.content section {
   margin: 4rem 0;
 }
 main.content #about {
+  background-color: #0f1626;
   margin: 0 -2em;
   padding: 4em 2em;
   display: flex;
@@ -342,15 +343,10 @@ main.content #about h2 {
 main.content #about img {
   outline: 1px solid #ccc;
   outline-offset: 3px;
-  order: 1;
   margin-bottom: 1rem;
 }
 main.content #about h2 {
-  order: 2;
   margin-bottom: 3rem;
-}
-main.content #about .about_text {
-  order: 3;
 }
 main.content #about span {
   display: block;
@@ -544,7 +540,7 @@ main.content #testimonial .slide {
 main.content #testimonial .slide > h5 {
   font-size: 1rem;
 }
-main.content #testimonial .slide > p {
+main.content #testimonial .slide p {
   transform: translateY(200px);
   opacity: 0;
   transition: transform 1000ms ease 300ms;
@@ -552,7 +548,7 @@ main.content #testimonial .slide > p {
 main.content #testimonial .current {
   opacity: 1;
 }
-main.content #testimonial .current > p {
+main.content #testimonial .current p {
   opacity: 1;
   transform: translateY(0);
 }
@@ -569,7 +565,7 @@ main.content #testimonial button {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.25);
+  background-color: #141d30;
 }
 main.content #testimonial button:hover {
   background-color: rgba(0, 0, 0, 0.8);
@@ -592,6 +588,9 @@ main.content #contact h2 {
 main.content #contact h2 {
   text-align: center;
   margin-bottom: 3rem;
+}
+main.content #contact .contact-info {
+  display: none;
 }
 main.content #contact .form-row {
   display: flex;
@@ -653,6 +652,180 @@ footer.glossary .sec-links {
 @media only screen and (max-width: 300px) {
   body {
     font-size: 0.7rem;
+  }
+}
+@media only screen and (min-width: 900px) {
+  body {
+    font-size: 1.1rem;
+    background-color: #141d30;
+  }
+
+  header.banner {
+    height: 100vh;
+    padding: 0;
+    width: 100%;
+  }
+  header.banner::before, header.banner::after {
+    all: initial;
+  }
+  header.banner .comp-logo {
+    width: inherit;
+    padding: 0.2em 6em;
+  }
+  header.banner .comp-logo > h1 {
+    width: 20%;
+  }
+  header.banner #toggler,
+header.banner .hamburger {
+    display: none;
+  }
+  header.banner .mainlinks {
+    position: initial;
+    width: 80%;
+    height: initial;
+    background-color: inherit;
+  }
+  header.banner .mainlinks ul {
+    flex-direction: row;
+    gap: 15px;
+  }
+  header.banner .mainlinks li {
+    transform: initial;
+    margin: 0;
+  }
+  header.banner .mainlinks li:first-child {
+    margin-left: auto;
+  }
+  header.banner .mainlinks li:nth-last-child(2) {
+    margin-left: auto;
+  }
+  header.banner .banner-text {
+    padding: 0 6em;
+  }
+  header.banner .banner-text p {
+    font-size: 2.6rem;
+  }
+  header.banner .banner-text span {
+    font-size: 3.5rem;
+  }
+  header.banner .banner-text a {
+    padding: 0.6em 1.5em;
+  }
+
+  main.content {
+    padding: 0;
+  }
+  main.content section {
+    padding: 0;
+    margin: 0;
+  }
+  main.content #about {
+    display: grid;
+    grid-template-columns: 300px 600px;
+    justify-content: center;
+    gap: 60px;
+    padding: 4em;
+    margin: 0;
+  }
+  main.content #about .about_text {
+    text-align: left;
+  }
+  main.content #about h2 {
+    margin-bottom: 0;
+  }
+  main.content #services {
+    padding: 4em 6em;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  main.content #services::before, main.content #services::after {
+    display: none;
+  }
+  main.content #services h2 {
+    grid-column: 1/-1;
+  }
+  main.content #services > div::before, main.content #services > div::after {
+    display: none;
+  }
+  main.content #testimonial,
+main.content #portfolio,
+main.content #contact,
+main.content #skills {
+    margin: 0;
+    padding: 4em 6em;
+  }
+  main.content #skills ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  main.content #portfolio {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  main.content #portfolio h2 {
+    grid-column: 1/-1;
+  }
+  main.content #testimonial {
+    padding-bottom: 6em;
+  }
+  main.content #testimonial .slider {
+    width: 70%;
+    height: 300px;
+  }
+  main.content #testimonial .slide {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+  }
+  main.content #testimonial .slide p {
+    transform: translateX(500px);
+  }
+  main.content #testimonial .current p {
+    transform: translateX(0);
+  }
+  main.content #testimonial button {
+    top: 90%;
+    width: 50px;
+    height: 50px;
+    font-size: 1rem;
+  }
+  main.content #testimonial #next {
+    right: 45%;
+  }
+  main.content #testimonial #prev {
+    left: 45%;
+  }
+  main.content #contact {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  main.content #contact h2 {
+    grid-column: 1/-1;
+  }
+  main.content #contact .contact-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  main.content #contact form {
+    outline: 1px solid red;
+  }
+  main.content #contact .contact-info {
+    display: grid;
+    gap: 10px;
+    outline: 1px solid red;
+  }
+  main.content #contact .contact-info i {
+    background-color: red;
+    color: #eaeaeb;
+    outline: 1px solid red;
+  }
+  main.content #contact a {
+    text-transform: none;
+    padding: 0;
   }
 }
 
