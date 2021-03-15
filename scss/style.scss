@@ -128,6 +128,11 @@ header.banner {
         &:checked ~ .mainlinks > ul > li {
             transform: translateX(0);
         }
+
+        &:checked ~ .mainlinks > .sec-links {
+            transform: translate(0);
+            transition-delay: 600ms;
+        }
     }
     
     .mainlinks {
@@ -140,19 +145,18 @@ header.banner {
         height: 100vh;
         overflow: hidden;
         transition: width 250ms ease 410ms;
-    
+
         ul {
             list-style: none;
             @include flex(column);
-            justify-content: flex-start;
             width: 100%;
-            height: 100%;
+            height: 70%;
         }
         
         li {
             margin: 2rem 0;
             transform: translateX(-500px);
-            transition: transform 600ms ease;
+            transition: transform 1s ease;
 
             &:nth-child(2) {
                 transition-delay: 80ms;
@@ -177,6 +181,21 @@ header.banner {
 
         a {
             color: #eaeaeb;
+        }
+
+        .sec-links {
+            width: 100%;
+            @include flex(row);
+            gap: 30px;
+            position: absolute;
+            bottom: 20px;
+            transform: translateY(200px);
+            transition: transform 300ms ease;
+
+            i {
+                font-size: 1.5rem;               
+                font-weight: 700;
+            }
         }
     }
 
@@ -670,6 +689,10 @@ footer.glossary {
                 &:focus::after {
                     transform: translateX(-50%) scale(1);
                 }
+            }
+
+            .sec-links {
+                display: none;
             }
         }
 

@@ -222,6 +222,10 @@ header.banner #toggler:checked ~ .mainlinks {
 header.banner #toggler:checked ~ .mainlinks > ul > li {
   transform: translateX(0);
 }
+header.banner #toggler:checked ~ .mainlinks > .sec-links {
+  transform: translate(0);
+  transition-delay: 600ms;
+}
 header.banner .mainlinks {
   background-color: rgba(0, 0, 0, 0.95);
   position: fixed;
@@ -239,14 +243,13 @@ header.banner .mainlinks ul {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  justify-content: flex-start;
   width: 100%;
-  height: 100%;
+  height: 70%;
 }
 header.banner .mainlinks li {
   margin: 2rem 0;
   transform: translateX(-500px);
-  transition: transform 600ms ease;
+  transition: transform 1s ease;
 }
 header.banner .mainlinks li:nth-child(2) {
   transition-delay: 80ms;
@@ -265,6 +268,22 @@ header.banner .mainlinks li:nth-child(6) {
 }
 header.banner .mainlinks a {
   color: #eaeaeb;
+}
+header.banner .mainlinks .sec-links {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  position: absolute;
+  bottom: 20px;
+  transform: translateY(200px);
+  transition: transform 300ms ease;
+}
+header.banner .mainlinks .sec-links i {
+  font-size: 1.5rem;
+  font-weight: 700;
 }
 header.banner .banner-text {
   position: absolute;
@@ -715,6 +734,9 @@ header.banner .hamburger {
   }
   header.banner .mainlinks a:hover::after, header.banner .mainlinks a:focus::after {
     transform: translateX(-50%) scale(1);
+  }
+  header.banner .mainlinks .sec-links {
+    display: none;
   }
   header.banner .banner-text {
     padding: 0 6em;
