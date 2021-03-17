@@ -126,7 +126,19 @@ function contactFormHandler() {
    window.addEventListener("scroll", handleScroll);
 } */
 
+
+   
+
 // call the functions
 exitFixedLink();
 sliders();
 contactFormHandler();
+
+const theme = document.getElementById("themer");
+function themeChanger(e) {
+      const body = document.querySelector(".comp-logo");
+     
+         body.style.backgroundColor = "#eaeaeb";
+   }
+
+   theme.addEventListener("click", themeChanger);

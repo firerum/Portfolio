@@ -117,12 +117,6 @@ button {
   background-color: #0f1626;
 }
 
-/* .container {
-    width: 100%;
-    max-width: 1020px;
-    margin: 0 auto;
-    background-color: $dark-blue;
-} */
 /* header styles */
 header.banner {
   height: 70vh;
@@ -185,7 +179,7 @@ header.banner .hamburger > div::before, header.banner .hamburger > div::after {
   width: 100%;
   height: inherit;
   background-color: inherit;
-  border-radius: 5px;
+  border-radius: 50%;
   transition: transform 250ms ease-in;
   content: "";
   top: 5px;
@@ -204,12 +198,14 @@ header.banner #toggler {
   z-index: 6;
   opacity: 0;
   cursor: pointer;
+  padding: 0;
 }
 header.banner #toggler:checked + .hamburger > div {
   transform: rotate(135deg);
 }
 header.banner #toggler:checked + .hamburger > div::before, header.banner #toggler:checked + .hamburger > div:after {
   top: 0;
+  border-radius: 5px;
   transform: rotate(90deg);
 }
 header.banner #toggler:checked:hover + .hamburger > div {
@@ -223,8 +219,12 @@ header.banner #toggler:checked ~ .mainlinks > ul > li {
   transform: translateX(0);
 }
 header.banner #toggler:checked ~ .mainlinks > .sec-links {
-  transform: translate(0);
-  transition-delay: 600ms;
+  transform: translateY(0);
+  transition-delay: 1s;
+}
+header.banner #toggler:checked ~ .mainlinks > #themer {
+  opacity: 1;
+  transition: opacity 1s ease-in;
 }
 header.banner .mainlinks {
   background-color: rgba(0, 0, 0, 0.95);
@@ -245,6 +245,7 @@ header.banner .mainlinks ul {
   align-items: center;
   width: 100%;
   height: 70%;
+  margin-top: 20px;
 }
 header.banner .mainlinks li {
   margin: 2rem 0;
@@ -277,13 +278,28 @@ header.banner .mainlinks .sec-links {
   align-items: center;
   gap: 30px;
   position: absolute;
-  bottom: 20px;
-  transform: translateY(200px);
+  margin-top: 3rem;
+  transform: translateY(500px);
   transition: transform 300ms ease;
 }
 header.banner .mainlinks .sec-links i {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 700;
+  color: #eaeaeb;
+}
+header.banner .mainlinks #themer {
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 1rem;
+  color: #ce9e62;
+  background-color: #0f1626;
+  cursor: pointer;
+  opacity: 0;
 }
 header.banner .banner-text {
   position: absolute;
@@ -300,7 +316,7 @@ header.banner .banner-text span {
   font-weight: 700;
 }
 header.banner .banner-text a {
-  border: 1px solid #fff;
+  border: 1px solid #0f1626;
   margin-right: 5px;
   padding: 0.6em 1.2em;
 }
@@ -440,6 +456,8 @@ main.content #services .design {
   position: relative;
   padding: 1em 2em;
   margin-bottom: 1rem;
+  height: 100%;
+  width: 100%;
   border-radius: 5px;
   background-color: #0f1626;
   clip-path: polygon(10px 0px, 10px 10px, 0px 15px, 10px 25px, 10px 100%, 100% 100%, 100% 0%);
@@ -672,12 +690,7 @@ footer.glossary .sec-links {
     font-size: 0.7rem;
   }
 }
-@media only screen and (min-width: 1070px) {
-  body {
-    font-size: 1.1rem;
-    background-color: #141d30;
-  }
-
+@media (min-width: 901px) {
   header.banner {
     height: 100vh;
     padding: 0;
@@ -706,6 +719,8 @@ header.banner .hamburger {
   header.banner .mainlinks ul {
     flex-direction: row;
     gap: 15px;
+    height: 100%;
+    margin: 0;
   }
   header.banner .mainlinks li {
     transform: initial;
@@ -729,7 +744,7 @@ header.banner .hamburger {
     width: calc(100% - 0.5em);
     transform: translateX(-50%) scale(0);
     border-radius: 5px;
-    background-color: red;
+    background-color: #e72727;
     transition: all 400ms ease;
   }
   header.banner .mainlinks a:hover::after, header.banner .mainlinks a:focus::after {
@@ -776,7 +791,7 @@ header.banner .hamburger {
   main.content #services {
     padding: 4em 6em;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr 1fr;
     gap: 20px;
   }
   main.content #services::before, main.content #services::after {
@@ -797,11 +812,11 @@ main.content #skills {
   }
   main.content #skills ul {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr 1fr;
   }
   main.content #portfolio {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr 1fr;
     gap: 20px;
   }
   main.content #portfolio h2 {
@@ -864,6 +879,22 @@ main.content #skills {
   main.content #contact a {
     text-transform: none;
     padding: 0;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  body {
+    font-size: 1.1rem;
+    background-color: #141d30;
+  }
+
+  main.content #services {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  main.content #skills ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  main.content #portfolio {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 

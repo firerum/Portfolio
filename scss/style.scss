@@ -13,22 +13,15 @@ textarea {
     padding-left: 1em;
 }
  
- button {
-     @include form-input;
-     padding: 0.7em 1em;
-     width: 100%;
-     text-transform: capitalize;
-     font-weight: 500;
-     color: inherit;
-     background-color: $deep-blue;
- }
-
-/* .container {
+button {
+    @include form-input;
+    padding: 0.7em 1em;
     width: 100%;
-    max-width: 1020px;
-    margin: 0 auto;
-    background-color: $dark-blue;
-} */
+    text-transform: capitalize;
+    font-weight: 500;
+    color: inherit;
+    background-color: $deep-bg;
+ }
 
 
 /* header styles */
@@ -52,7 +45,7 @@ header.banner {
     }
     
     .comp-logo {
-        background-color: $deep-blue;
+        background-color: $deep-bg;
         position: fixed;
         top: 0;
         left: 0;
@@ -105,6 +98,7 @@ header.banner {
         z-index: 6;
         opacity: 0;
         cursor: pointer;
+        padding: 0;
         
         &:checked + .hamburger > div {
             transform: rotate(135deg);
@@ -113,6 +107,7 @@ header.banner {
         &:checked + .hamburger > div::before,
         &:checked + .hamburger > div:after {
             top: 0;
+            border-radius: $pry-radius;
             transform: rotate(90deg);
         }
         
@@ -130,8 +125,13 @@ header.banner {
         }
 
         &:checked ~ .mainlinks > .sec-links {
-            transform: translate(0);
-            transition-delay: 600ms;
+            transform: translateY(0);
+            transition-delay: 1s;
+        }
+
+        &:checked ~ .mainlinks > #themer {
+            opacity: 1;
+            transition: opacity 1s ease-in;
         }
     }
     
@@ -151,6 +151,7 @@ header.banner {
             @include flex(column);
             width: 100%;
             height: 70%;
+            margin-top: 20px;
         }
         
         li {
@@ -188,14 +189,31 @@ header.banner {
             @include flex(row);
             gap: 30px;
             position: absolute;
-            bottom: 20px;
-            transform: translateY(200px);
+            margin-top: 3rem;
+            transform: translateY(500px);
             transition: transform 300ms ease;
 
             i {
-                font-size: 1.5rem;               
+                font-size: 1.3rem;               
                 font-weight: 700;
+                color: #eaeaeb;
             }
+
+        }
+
+        #themer {
+            position: absolute;
+            left: 50%;
+            bottom: 20px;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 1rem;
+            color: $deep-gold;
+            background-color: $deep-bg;
+            cursor: pointer;
+            opacity: 0;
         }
     }
 
@@ -216,7 +234,7 @@ header.banner {
         }
 
         a {
-            border: 1px solid #fff;
+            border: 1px solid $deep-bg;
             margin-right: 5px;
             padding: 0.6em 1.2em;
         }
@@ -273,7 +291,7 @@ main.content {
     }
 
     #about {
-        background-color: $deep-blue;
+        background-color: $deep-bg;
        @include layout;
        display: flex;
        flex-direction: column;
@@ -295,7 +313,7 @@ main.content {
     }
 
     #services {
-        background-color: $dark-blue;
+        background-color: $dark-bg;
         position: relative;
         padding: 0 0 1em 2em;
 
@@ -306,7 +324,7 @@ main.content {
             left: 0;
             height: 100%;
             width: 3px;
-            background-color: $deep-blue;
+            background-color: $deep-bg;
         }
 
         &::after {
@@ -318,7 +336,7 @@ main.content {
             width: 20px;
             height: 20px;
             border-radius: 50%;
-            border: 3px solid $deep-blue;
+            border: 3px solid $deep-bg;
         }
 
         h2 {
@@ -331,7 +349,7 @@ main.content {
             position: relative;
             padding-left: 5px;
             filter: drop-shadow(1px 0px 2px #3535358b)
-                    drop-shadow(-2px -1px 4px $deep-blue);
+                    drop-shadow(-2px -1px 4px $deep-bg);
 
             &::before {
                 content: "";
@@ -342,7 +360,7 @@ main.content {
                 width: 30px;
                 height: 30px;
                 border-radius: 50%;
-                border: 4px solid $deep-blue;
+                border: 4px solid $deep-bg;
                 clip-path: initial;
                 z-index: 3;
             }
@@ -371,8 +389,10 @@ main.content {
             position: relative;
             padding: 1em 2em;
             margin-bottom: 1rem;
+            height: 100%;
+            width: 100%;
             border-radius: $pry-radius;
-            background-color: $deep-blue;
+            background-color: $deep-bg;
             clip-path: polygon(10px 0px, 10px 10px, 0px 15px, 10px 25px, 10px 100%, 100% 100%, 100% 0% );
             position: relative;
         }
@@ -392,7 +412,7 @@ main.content {
 
     #skills {
         @include layout;
-        background-color: $deep-blue;
+        background-color: $deep-bg;
         @include flex(column);
 
         /* temporary styling */
@@ -446,7 +466,7 @@ main.content {
             width: 100%;
             height: 0;
             overflow: hidden;
-            background-color: $deep-blue;
+            background-color: $deep-bg;
             transition: height 300ms ease;
             @include flex(column);
             padding: 0 1em;
@@ -458,7 +478,7 @@ main.content {
         position: relative;
         @include layout;
         color: #fff;
-        background-color: $deep-blue;
+        background-color: $deep-bg;
         padding-bottom: 0;
 
         h2 {
@@ -511,7 +531,7 @@ main.content {
             font-weight: bold;
             cursor: pointer;
             @include flex(row);
-            background-color: $dark-blue;
+            background-color: $dark-bg;
 
             &:hover {
                 background-color: rgba(0,0,0,.8);
@@ -569,7 +589,7 @@ main.content {
         }
 
         button:hover {
-          background-color: lighten($deep-blue, 7);
+          background-color: lighten($deep-bg, 7);
         }
 
     }
@@ -592,7 +612,7 @@ footer.glossary {
     text-align: center;
     padding: $pry-padding;
     @include flex(column);
-    background-color: $deep-blue;
+    background-color: $deep-bg;
 
     h2 {
         color: $deep-gold;
@@ -615,11 +635,11 @@ footer.glossary {
     }
 }
 
-@media only screen and (min-width: 1070px) {
-    body {
-        font-size: 1.1rem;
-        background-color: $dark-blue;
-    }
+@media (min-width: 501) and (max-width: 900) {
+    
+}
+
+@media (min-width: 901px) {
 
     header.banner {
         height: 100vh;
@@ -654,6 +674,8 @@ footer.glossary {
             ul {
                 flex-direction: row;
                 gap: 15px;
+                height: 100%;
+                margin: 0; 
             }
 
             li {
@@ -681,7 +703,7 @@ footer.glossary {
                     width: calc(100% - 0.5em);
                     transform: translateX(-50%) scale(0);
                     border-radius: $pry-radius;
-                    background-color: red;
+                    background-color: rgb(231, 39, 39);
                     transition: all 400ms ease;
                 }
 
@@ -742,7 +764,7 @@ footer.glossary {
         #services {
             padding: 4em $desk-padding;
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: 1fr 1fr;
             gap: 20px;
 
             &::before,
@@ -774,13 +796,13 @@ footer.glossary {
         
             ul {
                 display: grid;
-                grid-template-columns: repeat(3, 1fr);
+                grid-template-columns: 1fr 1fr;
             }
         }
 
         #portfolio {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: 1fr 1fr;
             gap: 20px;
 
             h2 {
@@ -865,11 +887,37 @@ footer.glossary {
             }
         }
     }
-
-
-
-
 }
+
+
+@media only screen and (min-width: 1200px) {
+    body {
+        font-size: 1.1rem;
+        background-color: $dark-bg;
+    }
+
+    main.content {
+
+        #services {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        #skills {
+        
+            ul {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        #portfolio {
+            grid-template-columns: repeat(3, 1fr);
+        }        
+        
+    }
+
+    
+}
+
 
 
 
