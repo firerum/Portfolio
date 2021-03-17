@@ -635,8 +635,92 @@ footer.glossary {
     }
 }
 
-@media (min-width: 501) and (max-width: 900) {
-    
+@media (min-width: 501px) and (max-width: 900px) {
+
+    header.banner {
+        height: 100vh;
+        padding: 0;
+        width: 100%;
+
+        &::before,
+        &::after {
+            all: initial;
+        }
+
+        .comp-logo {
+            @include flex(column);
+            justify-content: space-between;
+            align-items: center;
+            width: inherit;
+            padding: 0.2em $desk-padding 1em $desk-padding;
+
+            /* > h1 {
+                width: 20%;
+                outline: $debugger;
+            } */
+        }
+
+        #toggler,
+        .hamburger {
+            display: none;
+        }
+
+        .mainlinks {
+            margin-top: 20px;
+            position: initial;
+            width: 75%;
+            height: initial;
+            background-color: inherit;
+            overflow: visible;
+
+            ul {
+                flex-direction: row;
+                gap: 15px;
+                height: 100%;
+                margin: 0; 
+            }
+
+            li {
+                transform: initial;
+                margin: 0;
+
+                &:first-child {
+                    margin-left: auto;
+                }
+
+                &:nth-last-child(2) {
+                    margin-left: auto;
+                }
+            }
+
+            a {
+                position: relative;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    left: 50%;
+                    bottom: 0;
+                    height: 2px;
+                    width: calc(100% - 0.5em);
+                    transform: translateX(-50%) scale(0);
+                    border-radius: $pry-radius;
+                    background-color: rgb(231, 39, 39);
+                    transition: all 400ms ease;
+                }
+
+                &:hover::after,
+                &:focus::after {
+                    transform: translateX(-50%) scale(1);
+                }
+            }
+
+            .sec-links {
+                display: none;
+            }
+        }
+    }
+
 }
 
 @media (min-width: 901px) {
@@ -754,6 +838,8 @@ footer.glossary {
 
             .about_text {
                 text-align: left;
+                align-self: center;
+                width: 34ch;
             }
 
             h2 {
@@ -803,10 +889,14 @@ footer.glossary {
         #portfolio {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 20px;
+            gap: 50px;
 
             h2 {
                 grid-column: 1/-1;
+            }
+
+            .project {
+                margin-bottom: 0;
             }
         }
 

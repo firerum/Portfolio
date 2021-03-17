@@ -76,7 +76,7 @@ ul {
 }
 
 img {
-  max-width: 100%;
+  width: 100%;
 }
 
 input {
@@ -690,6 +690,79 @@ footer.glossary .sec-links {
     font-size: 0.7rem;
   }
 }
+@media (min-width: 501px) and (max-width: 900px) {
+  header.banner {
+    height: 100vh;
+    padding: 0;
+    width: 100%;
+  }
+  header.banner::before, header.banner::after {
+    all: initial;
+  }
+  header.banner .comp-logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    align-items: center;
+    width: inherit;
+    padding: 0.2em 6em 1em 6em;
+    /* > h1 {
+        width: 20%;
+        outline: $debugger;
+    } */
+  }
+  header.banner #toggler,
+header.banner .hamburger {
+    display: none;
+  }
+  header.banner .mainlinks {
+    margin-top: 20px;
+    position: initial;
+    width: 75%;
+    height: initial;
+    background-color: inherit;
+    overflow: visible;
+  }
+  header.banner .mainlinks ul {
+    flex-direction: row;
+    gap: 15px;
+    height: 100%;
+    margin: 0;
+  }
+  header.banner .mainlinks li {
+    transform: initial;
+    margin: 0;
+  }
+  header.banner .mainlinks li:first-child {
+    margin-left: auto;
+  }
+  header.banner .mainlinks li:nth-last-child(2) {
+    margin-left: auto;
+  }
+  header.banner .mainlinks a {
+    position: relative;
+  }
+  header.banner .mainlinks a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    height: 2px;
+    width: calc(100% - 0.5em);
+    transform: translateX(-50%) scale(0);
+    border-radius: 5px;
+    background-color: #e72727;
+    transition: all 400ms ease;
+  }
+  header.banner .mainlinks a:hover::after, header.banner .mainlinks a:focus::after {
+    transform: translateX(-50%) scale(1);
+  }
+  header.banner .mainlinks .sec-links {
+    display: none;
+  }
+}
 @media (min-width: 901px) {
   header.banner {
     height: 100vh;
@@ -784,6 +857,8 @@ header.banner .hamburger {
   }
   main.content #about .about_text {
     text-align: left;
+    align-self: center;
+    width: 34ch;
   }
   main.content #about h2 {
     margin-bottom: 0;
@@ -817,10 +892,13 @@ main.content #skills {
   main.content #portfolio {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    gap: 50px;
   }
   main.content #portfolio h2 {
     grid-column: 1/-1;
+  }
+  main.content #portfolio .project {
+    margin-bottom: 0;
   }
   main.content #testimonial {
     padding-bottom: 6em;
