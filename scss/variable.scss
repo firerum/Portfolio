@@ -1,9 +1,44 @@
-$bg-color: #333;
-$debugger: 1px solid red;
-$pry-radius: 5px;
-$pry-padding: 2em;
-$margin-bottom: 3rem;
-$deep-bg: #0f1626;
-$dark-bg:  #141d30;
-$deep-gold: #ce9e62;
-$desk-padding: 6em;
+:root {
+   $colors:(
+      "bg-color": #333,
+      "deep-bg": #0f1626,
+      "dark-bg":  #141d30,
+      "deep-gold": #ce9e62,
+      "pry-font-color": #eaeaeb,
+      "desk-padding": 6em,
+      "pry-radius": 5px,
+      "pry-padding": 2em,
+      "margin-bottom": 3rem,
+      "debugger": 1px solid red,
+      "link-color": #fff,
+      "burger-color": #eaeaeb,
+      "headings": #eaeaeb,
+      "icons-color": #eaeaeb,
+      "btn-bg": #0f1626
+   );
+
+   @each $key, $value in $colors {
+      --#{$key}: #{$value}
+   }
+}
+
+:root.light{
+   $colors:(
+      "bg-color": #333,
+      "deep-bg": #F4F6FC,
+      "dark-bg":  #fff,
+      "deep-gold": #ce9e62,
+      "pry-font-color": #273347,
+      "link-color": #143774,
+      "burger-color": #1F2C46,
+      "headings": #1F2C46,
+      "icons-color": #1F2C46,
+      "btn-bg": #143786
+   );
+
+   @each $key, $value in $colors {
+      --#{$key}: #{$value}
+   }
+}
+
+

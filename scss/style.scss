@@ -5,12 +5,13 @@
 
 input {
     @include form-input;
-     border: 1px solid #ccc;
- }
+    border: 1px solid #ccc;
+}
 
 textarea {
     @include form-input;
     padding-left: 1em;
+    border: 1px solid #ccc;;
 }
  
 button {
@@ -19,8 +20,8 @@ button {
     width: 100%;
     text-transform: capitalize;
     font-weight: 500;
-    color: inherit;
-    background-color: $deep-bg;
+    color: #eaeaeb;
+    background-color: var(--btn-bg);
  }
 
 
@@ -28,7 +29,7 @@ button {
 header.banner {
     height: 70vh;
     position: relative;
-    padding: 1em $pry-padding 6em $pry-padding;
+    padding: 1em var(--pry-padding) 6em var(--pry-padding);
    
     &::before,
     &::after {
@@ -45,7 +46,7 @@ header.banner {
     }
     
     .comp-logo {
-        background-color: $deep-bg;
+        background-color: var(--deep-bg);
         position: fixed;
         top: 0;
         left: 0;
@@ -61,7 +62,7 @@ header.banner {
 
             a {
                 padding: 0;
-                color: $deep-gold;
+                color: var(--deep-gold);
             }
         }
     }
@@ -76,8 +77,8 @@ header.banner {
         position: relative;
         width: 100%;
         height: 2.5px;
-        border-radius: $pry-radius;
-        background-color: #fff;
+        border-radius: var(--pry-radius);
+        background-color: var(--burger-color);
         transition: transform 250ms ease-in;
         
         &::before,
@@ -107,7 +108,7 @@ header.banner {
         &:checked + .hamburger > div::before,
         &:checked + .hamburger > div:after {
             top: 0;
-            border-radius: $pry-radius;
+            border-radius: var(--pry-radius);
             transform: rotate(90deg);
         }
         
@@ -181,7 +182,7 @@ header.banner {
         }
 
         a {
-            color: #eaeaeb;
+            color: var(--link-color);
         }
 
         .sec-links {
@@ -196,7 +197,7 @@ header.banner {
             i {
                 font-size: 1.3rem;               
                 font-weight: 700;
-                color: #eaeaeb;
+               /*  color: #eaeaeb; */
             }
 
         }
@@ -210,8 +211,8 @@ header.banner {
             height: 50px;
             border-radius: 50%;
             font-size: 1rem;
-            color: $deep-gold;
-            background-color: $deep-bg;
+            color: var(--deep-gold);
+            background-color: var(--deep-bg);
             cursor: pointer;
             opacity: 0;
         }
@@ -234,7 +235,7 @@ header.banner {
         }
 
         a {
-            border: 1px solid $deep-bg;
+            border: 1px solid var(--deep-bg);
             margin-right: 5px;
             padding: 0.6em 1.2em;
         }
@@ -281,7 +282,7 @@ header.banner {
 
 /* main styles */
 main.content {
-    padding: 4em $pry-padding;
+    padding: 4em var(--pry-padding);
     padding-bottom: 0;
     text-align: center;
 
@@ -291,7 +292,7 @@ main.content {
     }
 
     #about {
-        background-color: $deep-bg;
+        background-color: var(--deep-bg);
        @include layout;
        display: flex;
        flex-direction: column;
@@ -303,7 +304,7 @@ main.content {
        }
 
        h2 {
-           margin-bottom: $margin-bottom;
+           margin-bottom: var(--margin-bottom);
        }
 
        span {
@@ -313,7 +314,7 @@ main.content {
     }
 
     #services {
-        background-color: $dark-bg;
+        background-color: var(--dark-bg);
         position: relative;
         padding: 0 0 1em 2em;
 
@@ -324,7 +325,7 @@ main.content {
             left: 0;
             height: 100%;
             width: 3px;
-            background-color: $deep-bg;
+            background-color: var(--deep-bg);
         }
 
         &::after {
@@ -336,20 +337,20 @@ main.content {
             width: 20px;
             height: 20px;
             border-radius: 50%;
-            border: 3px solid $deep-bg;
+            border: 3px solid var(--deep-bg);
         }
 
         h2 {
             font-size: 2rem;
-            margin-bottom: $margin-bottom;
-            color: $deep-gold;
+            margin-bottom: var(--margin-bottom);
+            color: var(--deep-gold);
         }
 
         > div {
             position: relative;
             padding-left: 5px;
             filter: drop-shadow(1px 0px 2px #3535358b)
-                    drop-shadow(-2px -1px 4px $deep-bg);
+                    drop-shadow(-2px -1px 4px var(--deep-bg));
 
             &::before {
                 content: "";
@@ -360,7 +361,7 @@ main.content {
                 width: 30px;
                 height: 30px;
                 border-radius: 50%;
-                border: 4px solid $deep-bg;
+                border: 4px solid var(--deep-bg);
                 clip-path: initial;
                 z-index: 3;
             }
@@ -372,9 +373,9 @@ main.content {
                 left: -39px;
                 width: 25px;
                 height: 25px;
-                color: #ccc;
+                color: var(--pry-font-color);
                 border-radius: 50%;
-                background-color: rgba(41, 41, 167);
+                background-color: var(--deep-bg);
                 font-family: "Font Awesome 5 Brands";
                 transition: transform 500ms ease;
             }
@@ -384,6 +385,18 @@ main.content {
             }
         }
 
+        .web-dev i {
+            color: #B52534;
+        }
+
+        .web-sec i {
+            color: #ADCB50;
+        }
+
+        .web-design i{
+            color: #2338B1;
+        }
+
         .design {
             text-align: left;
             position: relative;
@@ -391,8 +404,8 @@ main.content {
             margin-bottom: 1rem;
             height: 100%;
             width: 100%;
-            border-radius: $pry-radius;
-            background-color: $deep-bg;
+            border-radius: var(--pry-radius);
+            background-color: var(--deep-bg);
             clip-path: polygon(10px 0px, 10px 10px, 0px 15px, 10px 25px, 10px 100%, 100% 100%, 100% 0% );
             position: relative;
         }
@@ -401,7 +414,6 @@ main.content {
             margin: 1rem;
             margin-left: 0;
             font-size: 1.2rem;
-            color: $deep-gold;
         }
 
         i {
@@ -412,7 +424,7 @@ main.content {
 
     #skills {
         @include layout;
-        background-color: $deep-bg;
+        background-color: var(--deep-bg);
         @include flex(column);
 
         /* temporary styling */
@@ -441,7 +453,7 @@ main.content {
         @include layout;
 
         h2 {
-            margin-bottom: $margin-bottom;
+            margin-bottom: var(--margin-bottom);
         }
 
         .project {
@@ -456,7 +468,7 @@ main.content {
 
         img {
             height: 100%;
-            border-radius: $pry-radius;
+            border-radius: var(--pry-radius);
         }
 
         .wrapper {
@@ -466,7 +478,7 @@ main.content {
             width: 100%;
             height: 0;
             overflow: hidden;
-            background-color: $deep-bg;
+            background-color: var(--deep-bg);
             transition: height 300ms ease;
             @include flex(column);
             padding: 0 1em;
@@ -477,12 +489,12 @@ main.content {
         @include flex(column);
         position: relative;
         @include layout;
-        color: #fff;
-        background-color: $deep-bg;
+        color: var(--pry-font-color);
+        background-color: var(--deep-bg);
         padding-bottom: 0;
 
         h2 {
-            margin-bottom: $margin-bottom;
+            margin-bottom: var(--margin-bottom);
         }
        
         .slider {
@@ -527,11 +539,11 @@ main.content {
             width: 30px;
             height: 30px;
             border-radius: 50%;
-            color: #fff;
+            color: #eaeaeb;
             font-weight: bold;
             cursor: pointer;
             @include flex(row);
-            background-color: $dark-bg;
+            background-color: var(--dark-bg);
 
             &:hover {
                 background-color: rgba(0,0,0,.8);
@@ -553,7 +565,7 @@ main.content {
 
         h2 {
             text-align: center;
-            margin-bottom: $margin-bottom;
+            margin-bottom: var(--margin-bottom);
         }
 
         .contact-info {
@@ -589,7 +601,7 @@ main.content {
         }
 
         button:hover {
-          background-color: lighten($deep-bg, 7);
+          background-color: lighten(#0f1626, 7);
         }
 
     }
@@ -610,12 +622,12 @@ main.content {
 /* footer styles */
 footer.glossary {
     text-align: center;
-    padding: $pry-padding;
+    padding: var(--pry-padding);
     @include flex(column);
-    background-color: $deep-bg;
+    background-color: var(--deep-bg);
 
     h2 {
-        color: $deep-gold;
+        color: var(--deep-gold);
     }
     
     p:nth-of-type(2) {
@@ -652,7 +664,7 @@ footer.glossary {
             justify-content: space-between;
             align-items: center;
             width: inherit;
-            padding: 0.2em $desk-padding 1em $desk-padding;
+            padding: 0.2em var(--desk-padding) 1em var(--desk-padding);
 
             /* > h1 {
                 width: 20%;
@@ -704,7 +716,7 @@ footer.glossary {
                     height: 2px;
                     width: calc(100% - 0.5em);
                     transform: translateX(-50%) scale(0);
-                    border-radius: $pry-radius;
+                    border-radius: var(--pry-radius);
                     background-color: rgb(231, 39, 39);
                     transition: all 400ms ease;
                 }
@@ -737,7 +749,7 @@ footer.glossary {
 
         .comp-logo {
             width: inherit;
-            padding: 0.2em $desk-padding;
+            padding: 0.2em var(--desk-padding);
 
             > h1 {
                 width: 20%;
@@ -786,7 +798,7 @@ footer.glossary {
                     height: 2px;
                     width: calc(100% - 0.5em);
                     transform: translateX(-50%) scale(0);
-                    border-radius: $pry-radius;
+                    border-radius: var(--pry-radius);
                     background-color: rgb(231, 39, 39);
                     transition: all 400ms ease;
                 }
@@ -833,7 +845,7 @@ footer.glossary {
             justify-content: center;
             align-items: start;
             gap: 60px;
-            padding: 4em $desk-padding;
+            padding: 4em var(--desk-padding);
             margin: 0;
 
             .about_text {
@@ -848,7 +860,7 @@ footer.glossary {
         }
 
         #services {
-            padding: 4em $desk-padding;
+            padding: 4em var(--desk-padding);
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 20px;
@@ -875,7 +887,7 @@ footer.glossary {
         #contact,
         #skills {
             margin: 0;
-            padding: 4em $desk-padding;
+            padding: 4em var(--desk-padding);
         }
 
         #skills {
@@ -965,7 +977,7 @@ footer.glossary {
 
                 i {
                     position: static;
-                    color: #eaeaeb;
+                    color: var(--pry-font-color);
                     font-size: 2.5rem; 
                 }
 
@@ -983,7 +995,7 @@ footer.glossary {
 @media only screen and (min-width: 1200px) {
     body {
         font-size: 1.1rem;
-        background-color: $dark-bg;
+        background-color: var(--dark-bg);
     }
 
     main.content {
@@ -1007,7 +1019,3 @@ footer.glossary {
 
     
 }
-
-
-
-

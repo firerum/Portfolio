@@ -50,25 +50,27 @@ body {
     display: flex;
     flex-direction: column;
     height: 100%;
-    color: #eaeaeb;
-    background-color: $dark-bg;
+    color: var(--pry-font-color);
+    background-color: var(--dark-bg);
 }
 
 a {
     font-weight: 500;
     text-decoration: none;
     text-transform: capitalize;
-    color: #fff;
+    color: var(--link-color);
     padding: 0.3em 0.5em;
 }
 
 h1, h2, h3, h4, h5, h6 {
     margin-bottom: 1rem;
     text-transform: capitalize;
+    color: var(--headings);
 }
 
 h2 {
     font-size: 1.6rem;
+    color: var(--headings);
 }
 
 p {
@@ -81,4 +83,8 @@ ul {
 
 img {
     width: 100%;
+}
+
+i {
+    color: var(--icons-color);
 }

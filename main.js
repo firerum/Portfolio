@@ -136,9 +136,8 @@ contactFormHandler();
 
 const theme = document.getElementById("themer");
 function themeChanger(e) {
-      const body = document.querySelector(".comp-logo");
-     
-         body.style.backgroundColor = "#eaeaeb";
-   }
+   const body = document.documentElement;
+      body.classList.toggle("light");
+}
 
    theme.addEventListener("click", themeChanger);
