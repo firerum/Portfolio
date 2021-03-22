@@ -5,16 +5,17 @@
   --dark-bg: #141d30 ;
   --deep-gold: #ce9e62 ;
   --pry-font-color: #eaeaeb ;
-  --desk-padding: 6em ;
-  --pry-radius: 5px ;
-  --pry-padding: 2em ;
-  --margin-bottom: 3rem ;
-  --debugger: 1px solid red ;
   --link-color: #fff ;
   --burger-color: #eaeaeb ;
   --headings: #eaeaeb ;
   --icons-color: #eaeaeb ;
   --btn-bg: #0f1626 ;
+  --h1-color: #ce9e62 ;
+  --desk-padding: 6em ;
+  --pry-radius: 5px ;
+  --pry-padding: 2em ;
+  --margin-bottom: 3rem ;
+  --debugger: 1px solid red ;
 }
 
 :root.light {
@@ -28,6 +29,7 @@
   --headings: #1F2C46 ;
   --icons-color: #1F2C46 ;
   --btn-bg: #143786 ;
+  --h1-color: #ce2b2b ;
 }
 
 @font-face {
@@ -410,7 +412,7 @@ main.content #about {
   flex-direction: column;
 }
 main.content #about h2 {
-  color: #ce9e62;
+  color: var(--h1-color);
   font-size: 2rem;
 }
 main.content #about img {
@@ -517,6 +519,7 @@ main.content #services h3 {
 }
 main.content #services i {
   font-size: 2.3rem;
+  filter: var(--icon-shadow);
 }
 main.content #skills {
   margin: 0 -2em;
@@ -530,7 +533,7 @@ main.content #skills {
   /* end of temporary styling */
 }
 main.content #skills h2 {
-  color: #ce9e62;
+  color: var(--h1-color);
   font-size: 2rem;
 }
 main.content #skills li {
@@ -546,13 +549,14 @@ main.content #skills span:nth-child(2) {
 }
 main.content #skills i {
   font-size: 3rem;
+  filter: var(--icon-shadow);
 }
 main.content #portfolio {
   margin: 0 -2em;
   padding: 4em 2em;
 }
 main.content #portfolio h2 {
-  color: #ce9e62;
+  color: var(--h1-color);
   font-size: 2rem;
 }
 main.content #portfolio h2 {
@@ -598,7 +602,7 @@ main.content #testimonial {
   padding-bottom: 0;
 }
 main.content #testimonial h2 {
-  color: #ce9e62;
+  color: var(--h1-color);
   font-size: 2rem;
 }
 main.content #testimonial h2 {
@@ -664,7 +668,7 @@ main.content #contact {
   text-align: left;
 }
 main.content #contact h2 {
-  color: #ce9e62;
+  color: var(--h1-color);
   font-size: 2rem;
 }
 main.content #contact h2 {

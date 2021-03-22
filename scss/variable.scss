@@ -5,16 +5,18 @@
       "dark-bg":  #141d30,
       "deep-gold": #ce9e62,
       "pry-font-color": #eaeaeb,
+      "link-color": #fff,
+      "burger-color": #eaeaeb,
+      "headings": #eaeaeb,
+      "icons-color": #eaeaeb,
+      "btn-bg": #0f1626,
+      "h1-color": #ce9e62,
       "desk-padding": 6em,
       "pry-radius": 5px,
       "pry-padding": 2em,
       "margin-bottom": 3rem,
       "debugger": 1px solid red,
-      "link-color": #fff,
-      "burger-color": #eaeaeb,
-      "headings": #eaeaeb,
-      "icons-color": #eaeaeb,
-      "btn-bg": #0f1626
+      /* "icon-shadow": drop-shadow(0px 4px 0px rgba(0, 250, 255, .2)) */
    );
 
    @each $key, $value in $colors {
@@ -33,7 +35,9 @@
       "burger-color": #1F2C46,
       "headings": #1F2C46,
       "icons-color": #1F2C46,
-      "btn-bg": #143786
+      "btn-bg": #143786,
+      "h1-color": rgb(206, 43, 43),
+      /* "icon-shadow": drop-shadow(0px 4px 0px rgba(0,0,0,.2)) */
    );
 
    @each $key, $value in $colors {

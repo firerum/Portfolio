@@ -417,7 +417,8 @@ main.content {
         }
 
         i {
-            font-size: 2.3rem;  
+            font-size: 2.3rem;
+            filter: var(--icon-shadow);  
         }
 
     }
@@ -444,6 +445,7 @@ main.content {
 
         i {
             font-size: 3rem;
+            filter: var(--icon-shadow);
         }
 
         /* end of temporary styling */
