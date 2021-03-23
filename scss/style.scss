@@ -215,7 +215,7 @@ header.banner {
             color: var(--deep-gold);
             background-color: var(--deep-bg);
             cursor: pointer;
-            opacity: 0;
+            opacity: 0; 
         }
     }
 
@@ -744,6 +744,10 @@ footer.glossary {
 
             .sec-links {
                 display: none;
+            }
+
+            #themer {
+                display: none;  
             }
         }
 

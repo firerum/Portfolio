@@ -84,6 +84,7 @@ body {
 a {
   font-weight: 500;
   text-decoration: none;
+  color: var(--pry-font-color);
   text-transform: capitalize;
   padding: 0.3em 0.5em;
 }
@@ -830,6 +831,9 @@ header.banner .hamburger {
     transform: translateX(-50%) scale(1);
   }
   header.banner .mainlinks .sec-links {
+    display: none;
+  }
+  header.banner .mainlinks #themer {
     display: none;
   }
   header.banner .banner-text {
