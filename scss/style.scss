@@ -16,12 +16,13 @@ textarea {
  
 button {
     @include form-input;
-    padding: 0.7em 1em;
+    padding: 0.8em 1em;
     width: 100%;
     text-transform: capitalize;
-    font-weight: 500;
+    font-weight: 600;
     color: #eaeaeb;
-    background-color: var(--btn-bg);
+    cursor: pointer;
+    background-color: #0f1626;
  }
 
 
@@ -46,7 +47,7 @@ header.banner {
     }
     
     .comp-logo {
-        background-color: var(--deep-bg);
+        background-color: #0f1626;
         position: fixed;
         top: 0;
         left: 0;
@@ -76,9 +77,9 @@ header.banner {
     .hamburger > div {
         position: relative;
         width: 100%;
-        height: 2.5px;
+        height: 2.3px;
         border-radius: var(--pry-radius);
-        background-color: var(--burger-color);
+        background-color: #eaeaeb;
         transition: transform 250ms ease-in;
         
         &::before,
@@ -182,7 +183,7 @@ header.banner {
         }
 
         a {
-            color: var(--link-color);
+            color: #fff;
         }
 
         .sec-links {
@@ -197,7 +198,7 @@ header.banner {
             i {
                 font-size: 1.3rem;               
                 font-weight: 700;
-               /*  color: #eaeaeb; */
+                color: #eaeaeb;
             }
 
         }
@@ -235,9 +236,11 @@ header.banner {
         }
 
         a {
-            border: 1px solid var(--deep-bg);
+            border: 2px solid lighten(#0f1626, 7);
             margin-right: 5px;
             padding: 0.6em 1.2em;
+            font-weight: normal;
+            color: var(--pry-font-color);
         }
        
     }
@@ -260,7 +263,7 @@ header.banner {
             height: 60px;
             width: 2px;
             transform: translateX(-50%);
-            background-color: #fff;
+            background-color: var(--pry-font-color);
         }
 
         &::after {
@@ -349,8 +352,8 @@ main.content {
         > div {
             position: relative;
             padding-left: 5px;
-            filter: drop-shadow(1px 0px 2px #3535358b)
-                    drop-shadow(-2px -1px 4px var(--deep-bg));
+            filter: drop-shadow(0px 0px 2px #3535354b)
+                    drop-shadow(0px 0px 1px var(--deep-bg));
 
             &::before {
                 content: "";
@@ -375,7 +378,7 @@ main.content {
                 height: 25px;
                 color: var(--pry-font-color);
                 border-radius: 50%;
-                background-color: var(--deep-bg);
+                background-color: var(--before);
                 font-family: "Font Awesome 5 Brands";
                 transition: transform 500ms ease;
             }
@@ -386,15 +389,15 @@ main.content {
         }
 
         .web-dev i {
-            color: #B52534;
+            color: #2338B1;   
         }
 
         .web-sec i {
-            color: #ADCB50;
+            color: rgb(226, 76, 76);
         }
 
         .web-design i{
-            color: #2338B1;
+            color: #ADCB50;
         }
 
         .design {
@@ -428,49 +431,48 @@ main.content {
         background-color: var(--deep-bg);
         @include flex(column);
 
-        /* temporary styling */
+        ul {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            justify-content: center;
+            gap: 10px;
+        }
 
         li {
-            display: grid;
-            grid-template-columns: 150px 150px;
+            @include flex(column);
             justify-items: center;
             align-items: center;
             padding: 1em;
+            box-shadow: 1px 2px 3px rgba(0, 0, 0, .15);
+            background-color: var(--dark-bg);
         }
 
         span:nth-child(2) {
-            justify-self: left;
             text-transform: capitalize;
         }
 
         i {
-            font-size: 3rem;
-            filter: var(--icon-shadow);
+            font-size: 2rem;
         }
-
-        /* end of temporary styling */
     }
 
     #portfolio {
         @include layout;
 
-        h2 {
-            margin-bottom: var(--margin-bottom);
-        }
-
         .project {
             margin-bottom: 2rem;
-            height: 300px;
             position: relative; 
 
             &:hover > .wrapper {
                 height: 100%;
+                transition-delay: initial;
             }
-        }
 
-        img {
-            height: 100%;
-            border-radius: var(--pry-radius);
+            &:hover .demo {
+                width: 30%;
+                transition: width 300ms ease-in 500ms;
+            }
         }
 
         .wrapper {
@@ -481,9 +483,26 @@ main.content {
             height: 0;
             overflow: hidden;
             background-color: var(--deep-bg);
-            transition: height 300ms ease;
+            transition: height 300ms ease 400ms;
             @include flex(column);
-            padding: 0 1em;
+            padding: 0 1em;  
+        }
+
+        .demo {
+            position: absolute;
+            @include flex(row);
+            gap: 10px;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            background-color: var(--pry-font-color);
+            color: #000;
+            overflow: hidden;
+            transition: width 200ms ease-in;    
+        }
+
+        i {
+            color: var(--demo-color);
         }
     }
 
@@ -543,12 +562,11 @@ main.content {
             border-radius: 50%;
             color: #eaeaeb;
             font-weight: bold;
-            cursor: pointer;
             @include flex(row);
             background-color: var(--dark-bg);
 
             &:hover {
-                background-color: rgba(0,0,0,.8);
+                background-color: rgba(0,0,0,.5);
             }
         }
         
@@ -593,11 +611,11 @@ main.content {
         input[type="text"]::placeholder,
         input[type="email"]::placeholder,
         textarea::placeholder {
-            font-size: 11px;
+            font-size: 13px;
         }
     
         label {
-            margin-bottom: 3px;
+            margin-bottom: 5px;
             font-weight: 500;
             text-transform: capitalize;
         }
@@ -626,7 +644,8 @@ footer.glossary {
     text-align: center;
     padding: var(--pry-padding);
     @include flex(column);
-    background-color: var(--deep-bg);
+    background-color: #0f1626;
+    color: #eaeaeb;
 
     h2 {
         color: var(--deep-gold);
@@ -639,6 +658,10 @@ footer.glossary {
     .sec-links {
         margin-bottom: 1rem;;
     }
+
+    a, i {
+        color: #fff;
+    }
 }
 
 
@@ -649,96 +672,7 @@ footer.glossary {
     }
 }
 
-@media (min-width: 501px) and (max-width: 900px) {
-
-    header.banner {
-        height: 100vh;
-        padding: 0;
-        width: 100%;
-
-        &::before,
-        &::after {
-            all: initial;
-        }
-
-        .comp-logo {
-            @include flex(column);
-            justify-content: space-between;
-            align-items: center;
-            width: inherit;
-            padding: 0.2em var(--desk-padding) 1em var(--desk-padding);
-
-            /* > h1 {
-                width: 20%;
-                outline: $debugger;
-            } */
-        }
-
-        #toggler,
-        .hamburger {
-            display: none;
-        }
-
-        .mainlinks {
-            margin-top: 20px;
-            position: initial;
-            width: 75%;
-            height: initial;
-            background-color: inherit;
-            overflow: visible;
-
-            ul {
-                flex-direction: row;
-                gap: 15px;
-                height: 100%;
-                margin: 0; 
-            }
-
-            li {
-                transform: initial;
-                margin: 0;
-
-                &:first-child {
-                    margin-left: auto;
-                }
-
-                &:nth-last-child(2) {
-                    margin-left: auto;
-                }
-            }
-
-            a {
-                position: relative;
-
-                &::after {
-                    content: "";
-                    position: absolute;
-                    left: 50%;
-                    bottom: 0;
-                    height: 2px;
-                    width: calc(100% - 0.5em);
-                    transform: translateX(-50%) scale(0);
-                    border-radius: var(--pry-radius);
-                    background-color: rgb(231, 39, 39);
-                    transition: all 400ms ease;
-                }
-
-                &:hover::after,
-                &:focus::after {
-                    transform: translateX(-50%) scale(1);
-                }
-            }
-
-            .sec-links {
-                display: none;
-            }
-        }
-    }
-
-}
-
-@media (min-width: 901px) {
-
+@media (min-width: 700px) {
     header.banner {
         height: 100vh;
         padding: 0;
@@ -751,11 +685,7 @@ footer.glossary {
 
         .comp-logo {
             width: inherit;
-            padding: 0.2em var(--desk-padding);
-
-            > h1 {
-                width: 20%;
-            }
+            padding: 0.2em 2em;
         }
 
         #toggler,
@@ -771,6 +701,7 @@ footer.glossary {
 
             ul {
                 flex-direction: row;
+                align-items: center;
                 gap: 15px;
                 height: 100%;
                 margin: 0; 
@@ -817,7 +748,7 @@ footer.glossary {
         }
 
         .banner-text {
-            padding: 0 6em;
+            padding: 0 2em;
 
             p {
                 font-size: 2.6rem;
@@ -847,7 +778,7 @@ footer.glossary {
             justify-content: center;
             align-items: start;
             gap: 60px;
-            padding: 4em var(--desk-padding);
+            padding: 4em 2em;
             margin: 0;
 
             .about_text {
@@ -861,8 +792,16 @@ footer.glossary {
             }
         }
 
+        #testimonial,
+        #portfolio,
+        #contact,
+        #skills {
+            margin: 0;
+            padding: 4em 2em;
+        }
+
         #services {
-            padding: 4em var(--desk-padding);
+            padding: 4em 2em;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 20px;
@@ -884,19 +823,96 @@ footer.glossary {
             }
         }
 
+        #skills {
+            ul {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        #portfolio {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+
+            h2 {
+                grid-column: 1/-1;
+            }
+
+            .project {
+                margin-bottom: 0;
+            }
+        }
+
+        #contact {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+
+            h2 {
+                width: 100%;
+            }
+
+            .contact-flex {
+                display: flex;
+                gap: 30px;
+
+            }
+
+            .contact-info {
+               display: grid;
+               align-items: start;
+
+                i {
+                    position: static;
+                    color: var(--pry-font-color);
+                    font-size: 2.5rem; 
+                    padding: 0;
+                }
+            }
+
+            a {
+                text-transform: none;
+                padding: 0;
+            }
+        }
+    }
+
+}
+
+@media (min-width: 859px) {
+    header.banner {
+
+        .comp-logo {
+            padding: 0.2em var(--desk-padding);
+
+            > h1 {
+                width: 20%;
+            }
+        }
+
+        .banner-text {
+            padding: 0 var(--desk-padding);
+        }
+    }
+
+    main.content {
+
+        #about {
+            padding: 4em var(--desk-padding);
+        }
+
+        #services,
         #testimonial,
         #portfolio,
         #contact,
         #skills {
-            margin: 0;
             padding: 4em var(--desk-padding);
         }
 
         #skills {
-        
+
             ul {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
+                grid-template-columns: repeat(4, 1fr);
             }
         }
 
@@ -916,6 +932,7 @@ footer.glossary {
 
         #testimonial {
             padding-bottom: 6em;
+
             .slider {
                 width: 70%;
                 height: 300px;
@@ -951,43 +968,15 @@ footer.glossary {
             #prev {
                 left: 45%;
             }
-
         }
 
         #contact {
             display: grid;
-            grid-template-columns: 1fr 1.5fr;
+            grid-template-columns: 1fr 1.3fr;
             column-gap: 100px;
 
             h2 {
                 grid-column: 1/-1;
-            }
-
-            .contact-flex {
-                display: flex;
-                gap: 50px;
-
-            }
-
-            .contact-info {
-               display: grid;
-               align-items: start;
-
-               h3 {
-                    padding-left: 2.5rem;
-               }
-
-                i {
-                    position: static;
-                    color: var(--pry-font-color);
-                    font-size: 2.5rem; 
-                }
-
-            }
-
-            a {
-                text-transform: none;
-                padding: 0;
             }
         }
     }
@@ -1006,18 +995,10 @@ footer.glossary {
             grid-template-columns: repeat(3, 1fr);
         }
 
-        #skills {
-        
-            ul {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
         #portfolio {
             grid-template-columns: repeat(3, 1fr);
         }        
         
     }
-
     
 }

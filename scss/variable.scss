@@ -1,16 +1,15 @@
 :root {
    $colors:(
-      "bg-color": #333,
       "deep-bg": #0f1626,
       "dark-bg":  #141d30,
       "deep-gold": #ce9e62,
       "pry-font-color": #eaeaeb,
-      "link-color": #fff,
-      "burger-color": #eaeaeb,
       "headings": #eaeaeb,
       "icons-color": #eaeaeb,
       "btn-bg": #0f1626,
+      "before": #2338B1,
       "h1-color": #ce9e62,
+      "demo-color": #2338B1,
       "desk-padding": 6em,
       "pry-radius": 5px,
       "pry-padding": 2em,
@@ -26,17 +25,16 @@
 
 :root.light{
    $colors:(
-      "bg-color": #333,
-      "deep-bg": #F4F6FC,
-      "dark-bg":  #fff,
+      "deep-bg": #fff,
+      "dark-bg":  aliceblue,
       "deep-gold": #ce9e62,
       "pry-font-color": #273347,
-      "link-color": #143774,
-      "burger-color": #1F2C46,
       "headings": #1F2C46,
       "icons-color": #1F2C46,
       "btn-bg": #143786,
-      "h1-color": rgb(206, 43, 43),
+      "before": aliceblue,
+      "h1-color": #1c2d8b,
+      "demo-color": #eaeaeb,
       /* "icon-shadow": drop-shadow(0px 4px 0px rgba(0,0,0,.2)) */
    );
 

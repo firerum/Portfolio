@@ -1,16 +1,15 @@
 @charset "UTF-8";
 :root {
-  --bg-color: #333 ;
   --deep-bg: #0f1626 ;
   --dark-bg: #141d30 ;
   --deep-gold: #ce9e62 ;
   --pry-font-color: #eaeaeb ;
-  --link-color: #fff ;
-  --burger-color: #eaeaeb ;
   --headings: #eaeaeb ;
   --icons-color: #eaeaeb ;
   --btn-bg: #0f1626 ;
+  --before: #2338B1 ;
   --h1-color: #ce9e62 ;
+  --demo-color: #2338B1 ;
   --desk-padding: 6em ;
   --pry-radius: 5px ;
   --pry-padding: 2em ;
@@ -19,17 +18,16 @@
 }
 
 :root.light {
-  --bg-color: #333 ;
-  --deep-bg: #F4F6FC ;
-  --dark-bg: #fff ;
+  --deep-bg: #fff ;
+  --dark-bg: aliceblue ;
   --deep-gold: #ce9e62 ;
   --pry-font-color: #273347 ;
-  --link-color: #143774 ;
-  --burger-color: #1F2C46 ;
   --headings: #1F2C46 ;
   --icons-color: #1F2C46 ;
   --btn-bg: #143786 ;
-  --h1-color: #ce2b2b ;
+  --before: aliceblue ;
+  --h1-color: #1c2d8b ;
+  --demo-color: #eaeaeb ;
 }
 
 @font-face {
@@ -87,7 +85,6 @@ a {
   font-weight: 500;
   text-decoration: none;
   text-transform: capitalize;
-  color: var(--link-color);
   padding: 0.3em 0.5em;
 }
 
@@ -112,6 +109,7 @@ ul {
 
 img {
   width: 100%;
+  display: block;
 }
 
 i {
@@ -121,7 +119,7 @@ i {
 input {
   appearance: none;
   -webkit-appearance: none;
-  padding: 0.7em 3em;
+  padding: 0.8em 3em;
   font-family: inherit;
   resize: none;
   border: none;
@@ -132,7 +130,7 @@ input {
 textarea {
   appearance: none;
   -webkit-appearance: none;
-  padding: 0.7em 3em;
+  padding: 0.8em 3em;
   font-family: inherit;
   resize: none;
   border: none;
@@ -144,17 +142,18 @@ textarea {
 button {
   appearance: none;
   -webkit-appearance: none;
-  padding: 0.7em 3em;
+  padding: 0.8em 3em;
   font-family: inherit;
   resize: none;
   border: none;
   border-radius: 2px;
-  padding: 0.7em 1em;
+  padding: 0.8em 1em;
   width: 100%;
   text-transform: capitalize;
-  font-weight: 500;
+  font-weight: 600;
   color: #eaeaeb;
-  background-color: var(--btn-bg);
+  cursor: pointer;
+  background-color: #0f1626;
 }
 
 /* header styles */
@@ -175,7 +174,7 @@ header.banner::after {
   right: 0;
 }
 header.banner .comp-logo {
-  background-color: var(--deep-bg);
+  background-color: #0f1626;
   position: fixed;
   top: 0;
   left: 0;
@@ -209,9 +208,9 @@ header.banner .hamburger {
 header.banner .hamburger > div {
   position: relative;
   width: 100%;
-  height: 2.5px;
+  height: 2.3px;
   border-radius: var(--pry-radius);
-  background-color: var(--burger-color);
+  background-color: #eaeaeb;
   transition: transform 250ms ease-in;
 }
 header.banner .hamburger > div::before, header.banner .hamburger > div::after {
@@ -308,7 +307,7 @@ header.banner .mainlinks li:nth-child(6) {
   transition-delay: 400ms;
 }
 header.banner .mainlinks a {
-  color: var(--link-color);
+  color: #fff;
 }
 header.banner .mainlinks .sec-links {
   width: 100%;
@@ -325,7 +324,7 @@ header.banner .mainlinks .sec-links {
 header.banner .mainlinks .sec-links i {
   font-size: 1.3rem;
   font-weight: 700;
-  /*  color: #eaeaeb; */
+  color: #eaeaeb;
 }
 header.banner .mainlinks #themer {
   position: absolute;
@@ -356,9 +355,11 @@ header.banner .banner-text span {
   font-weight: 700;
 }
 header.banner .banner-text a {
-  border: 1px solid var(--deep-bg);
+  border: 2px solid #192540;
   margin-right: 5px;
   padding: 0.6em 1.2em;
+  font-weight: normal;
+  color: var(--pry-font-color);
 }
 header.banner .media-links {
   display: flex;
@@ -380,7 +381,7 @@ header.banner .media-links::before, header.banner .media-links::after {
   height: 60px;
   width: 2px;
   transform: translateX(-50%);
-  background-color: #fff;
+  background-color: var(--pry-font-color);
 }
 header.banner .media-links::after {
   top: 106%;
@@ -414,6 +415,7 @@ main.content #about {
 main.content #about h2 {
   color: var(--h1-color);
   font-size: 2rem;
+  margin-bottom: 3rem;
 }
 main.content #about img {
   outline: 1px solid #ccc;
@@ -460,7 +462,7 @@ main.content #services h2 {
 main.content #services > div {
   position: relative;
   padding-left: 5px;
-  filter: drop-shadow(1px 0px 2px #3535358b) drop-shadow(-2px -1px 4px var(--deep-bg));
+  filter: drop-shadow(0px 0px 2px #3535354b) drop-shadow(0px 0px 1px var(--deep-bg));
 }
 main.content #services > div::before {
   content: "";
@@ -484,7 +486,7 @@ main.content #services > div::after {
   height: 25px;
   color: var(--pry-font-color);
   border-radius: 50%;
-  background-color: var(--deep-bg);
+  background-color: var(--before);
   font-family: "Font Awesome 5 Brands";
   transition: transform 500ms ease;
 }
@@ -492,13 +494,13 @@ main.content #services > div:hover::after {
   transform: rotate(360deg) scale(0.8);
 }
 main.content #services .web-dev i {
-  color: #B52534;
+  color: #2338B1;
 }
 main.content #services .web-sec i {
-  color: #ADCB50;
+  color: #e24c4c;
 }
 main.content #services .web-design i {
-  color: #2338B1;
+  color: #ADCB50;
 }
 main.content #services .design {
   text-align: left;
@@ -529,27 +531,35 @@ main.content #skills {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* temporary styling */
-  /* end of temporary styling */
 }
 main.content #skills h2 {
   color: var(--h1-color);
   font-size: 2rem;
+  margin-bottom: 3rem;
+}
+main.content #skills ul {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  gap: 10px;
 }
 main.content #skills li {
-  display: grid;
-  grid-template-columns: 150px 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   justify-items: center;
   align-items: center;
   padding: 1em;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.15);
+  background-color: var(--dark-bg);
 }
 main.content #skills span:nth-child(2) {
-  justify-self: left;
   text-transform: capitalize;
 }
 main.content #skills i {
-  font-size: 3rem;
-  filter: var(--icon-shadow);
+  font-size: 2rem;
 }
 main.content #portfolio {
   margin: 0 -2em;
@@ -558,21 +568,19 @@ main.content #portfolio {
 main.content #portfolio h2 {
   color: var(--h1-color);
   font-size: 2rem;
-}
-main.content #portfolio h2 {
-  margin-bottom: var(--margin-bottom);
+  margin-bottom: 3rem;
 }
 main.content #portfolio .project {
   margin-bottom: 2rem;
-  height: 300px;
   position: relative;
 }
 main.content #portfolio .project:hover > .wrapper {
   height: 100%;
+  transition-delay: initial;
 }
-main.content #portfolio img {
-  height: 100%;
-  border-radius: var(--pry-radius);
+main.content #portfolio .project:hover .demo {
+  width: 30%;
+  transition: width 300ms ease-in 500ms;
 }
 main.content #portfolio .wrapper {
   position: absolute;
@@ -582,12 +590,30 @@ main.content #portfolio .wrapper {
   height: 0;
   overflow: hidden;
   background-color: var(--deep-bg);
-  transition: height 300ms ease;
+  transition: height 300ms ease 400ms;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 0 1em;
+}
+main.content #portfolio .demo {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  background-color: var(--pry-font-color);
+  color: #000;
+  overflow: hidden;
+  transition: width 200ms ease-in;
+}
+main.content #portfolio i {
+  color: var(--demo-color);
 }
 main.content #testimonial {
   display: flex;
@@ -604,6 +630,7 @@ main.content #testimonial {
 main.content #testimonial h2 {
   color: var(--h1-color);
   font-size: 2rem;
+  margin-bottom: 3rem;
 }
 main.content #testimonial h2 {
   margin-bottom: var(--margin-bottom);
@@ -646,7 +673,6 @@ main.content #testimonial button {
   border-radius: 50%;
   color: #eaeaeb;
   font-weight: bold;
-  cursor: pointer;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -654,7 +680,7 @@ main.content #testimonial button {
   background-color: var(--dark-bg);
 }
 main.content #testimonial button:hover {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 main.content #testimonial #next {
   right: 10px;
@@ -670,6 +696,7 @@ main.content #contact {
 main.content #contact h2 {
   color: var(--h1-color);
   font-size: 2rem;
+  margin-bottom: 3rem;
 }
 main.content #contact h2 {
   text-align: center;
@@ -695,10 +722,10 @@ main.content #contact i {
 main.content #contact input[type=text]::placeholder,
 main.content #contact input[type=email]::placeholder,
 main.content #contact textarea::placeholder {
-  font-size: 11px;
+  font-size: 13px;
 }
 main.content #contact label {
-  margin-bottom: 3px;
+  margin-bottom: 5px;
   font-weight: 500;
   text-transform: capitalize;
 }
@@ -722,7 +749,8 @@ footer.glossary {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: var(--deep-bg);
+  background-color: #0f1626;
+  color: #eaeaeb;
 }
 footer.glossary h2 {
   color: var(--deep-gold);
@@ -733,6 +761,9 @@ footer.glossary p:nth-of-type(2) {
 footer.glossary .sec-links {
   margin-bottom: 1rem;
 }
+footer.glossary a, footer.glossary i {
+  color: #fff;
+}
 
 /* media queries */
 @media only screen and (max-width: 300px) {
@@ -740,80 +771,7 @@ footer.glossary .sec-links {
     font-size: 0.7rem;
   }
 }
-@media (min-width: 501px) and (max-width: 900px) {
-  header.banner {
-    height: 100vh;
-    padding: 0;
-    width: 100%;
-  }
-  header.banner::before, header.banner::after {
-    all: initial;
-  }
-  header.banner .comp-logo {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    justify-content: space-between;
-    align-items: center;
-    width: inherit;
-    padding: 0.2em var(--desk-padding) 1em var(--desk-padding);
-    /* > h1 {
-        width: 20%;
-        outline: $debugger;
-    } */
-  }
-  header.banner #toggler,
-header.banner .hamburger {
-    display: none;
-  }
-  header.banner .mainlinks {
-    margin-top: 20px;
-    position: initial;
-    width: 75%;
-    height: initial;
-    background-color: inherit;
-    overflow: visible;
-  }
-  header.banner .mainlinks ul {
-    flex-direction: row;
-    gap: 15px;
-    height: 100%;
-    margin: 0;
-  }
-  header.banner .mainlinks li {
-    transform: initial;
-    margin: 0;
-  }
-  header.banner .mainlinks li:first-child {
-    margin-left: auto;
-  }
-  header.banner .mainlinks li:nth-last-child(2) {
-    margin-left: auto;
-  }
-  header.banner .mainlinks a {
-    position: relative;
-  }
-  header.banner .mainlinks a::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    height: 2px;
-    width: calc(100% - 0.5em);
-    transform: translateX(-50%) scale(0);
-    border-radius: var(--pry-radius);
-    background-color: #e72727;
-    transition: all 400ms ease;
-  }
-  header.banner .mainlinks a:hover::after, header.banner .mainlinks a:focus::after {
-    transform: translateX(-50%) scale(1);
-  }
-  header.banner .mainlinks .sec-links {
-    display: none;
-  }
-}
-@media (min-width: 901px) {
+@media (min-width: 700px) {
   header.banner {
     height: 100vh;
     padding: 0;
@@ -824,10 +782,7 @@ header.banner .hamburger {
   }
   header.banner .comp-logo {
     width: inherit;
-    padding: 0.2em var(--desk-padding);
-  }
-  header.banner .comp-logo > h1 {
-    width: 20%;
+    padding: 0.2em 2em;
   }
   header.banner #toggler,
 header.banner .hamburger {
@@ -841,6 +796,7 @@ header.banner .hamburger {
   }
   header.banner .mainlinks ul {
     flex-direction: row;
+    align-items: center;
     gap: 15px;
     height: 100%;
     margin: 0;
@@ -877,7 +833,7 @@ header.banner .hamburger {
     display: none;
   }
   header.banner .banner-text {
-    padding: 0 6em;
+    padding: 0 2em;
   }
   header.banner .banner-text p {
     font-size: 2.6rem;
@@ -902,7 +858,7 @@ header.banner .hamburger {
     justify-content: center;
     align-items: start;
     gap: 60px;
-    padding: 4em var(--desk-padding);
+    padding: 4em 2em;
     margin: 0;
   }
   main.content #about .about_text {
@@ -913,8 +869,15 @@ header.banner .hamburger {
   main.content #about h2 {
     margin-bottom: 0;
   }
+  main.content #testimonial,
+main.content #portfolio,
+main.content #contact,
+main.content #skills {
+    margin: 0;
+    padding: 4em 2em;
+  }
   main.content #services {
-    padding: 4em var(--desk-padding);
+    padding: 4em 2em;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
@@ -928,16 +891,70 @@ header.banner .hamburger {
   main.content #services > div::before, main.content #services > div::after {
     display: none;
   }
-  main.content #testimonial,
+  main.content #skills ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  main.content #portfolio {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+  }
+  main.content #portfolio h2 {
+    grid-column: 1/-1;
+  }
+  main.content #portfolio .project {
+    margin-bottom: 0;
+  }
+  main.content #contact {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  main.content #contact h2 {
+    width: 100%;
+  }
+  main.content #contact .contact-flex {
+    display: flex;
+    gap: 30px;
+  }
+  main.content #contact .contact-info {
+    display: grid;
+    align-items: start;
+  }
+  main.content #contact .contact-info i {
+    position: static;
+    color: var(--pry-font-color);
+    font-size: 2.5rem;
+    padding: 0;
+  }
+  main.content #contact a {
+    text-transform: none;
+    padding: 0;
+  }
+}
+@media (min-width: 859px) {
+  header.banner .comp-logo {
+    padding: 0.2em var(--desk-padding);
+  }
+  header.banner .comp-logo > h1 {
+    width: 20%;
+  }
+  header.banner .banner-text {
+    padding: 0 var(--desk-padding);
+  }
+
+  main.content #about {
+    padding: 4em var(--desk-padding);
+  }
+  main.content #services,
+main.content #testimonial,
 main.content #portfolio,
 main.content #contact,
 main.content #skills {
-    margin: 0;
     padding: 4em var(--desk-padding);
   }
   main.content #skills ul {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
   }
   main.content #portfolio {
     display: grid;
@@ -982,31 +999,11 @@ main.content #skills {
   }
   main.content #contact {
     display: grid;
-    grid-template-columns: 1fr 1.5fr;
+    grid-template-columns: 1fr 1.3fr;
     column-gap: 100px;
   }
   main.content #contact h2 {
     grid-column: 1/-1;
-  }
-  main.content #contact .contact-flex {
-    display: flex;
-    gap: 50px;
-  }
-  main.content #contact .contact-info {
-    display: grid;
-    align-items: start;
-  }
-  main.content #contact .contact-info h3 {
-    padding-left: 2.5rem;
-  }
-  main.content #contact .contact-info i {
-    position: static;
-    color: var(--pry-font-color);
-    font-size: 2.5rem;
-  }
-  main.content #contact a {
-    text-transform: none;
-    padding: 0;
   }
 }
 @media only screen and (min-width: 1200px) {
@@ -1016,9 +1013,6 @@ main.content #skills {
   }
 
   main.content #services {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  main.content #skills ul {
     grid-template-columns: repeat(3, 1fr);
   }
   main.content #portfolio {
