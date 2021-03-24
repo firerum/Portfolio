@@ -295,7 +295,7 @@ main.content {
     }
 
     #about {
-        background-color: var(--deep-bg);
+       background-color: var(--about);
        @include layout;
        display: flex;
        flex-direction: column;
@@ -313,6 +313,8 @@ main.content {
        span {
            display: block;
            margin: 1rem 0;
+           font-size: 1.1rem;
+           font-weight: 500;
        }
     }
 
@@ -346,7 +348,7 @@ main.content {
         h2 {
             font-size: 2rem;
             margin-bottom: var(--margin-bottom);
-            color: var(--deep-gold);
+            color: var(--h1-color);
         }
 
         > div {
@@ -389,7 +391,7 @@ main.content {
         }
 
         .web-dev i {
-            color: #2338B1;   
+            color: #ADCB50;   
         }
 
         .web-sec i {
@@ -778,21 +780,26 @@ footer.glossary {
 
         #about {
             display: grid;
-            grid-template-columns: 1fr 2fr;
+            grid-template-columns: 250px 350px;
             justify-content: center;
             align-items: start;
-            gap: 60px;
+            gap: 50px;
             padding: 4em 2em;
             margin: 0;
 
             .about_text {
                 text-align: left;
-                align-self: center;
-                width: 34ch;
+                font-size: 0.9rem;
             }
 
             h2 {
-                margin-bottom: 0;
+                grid-column: 1/-1;
+                margin-bottom: 3rem;
+            }
+
+            img { 
+                align-self: center;
+                
             }
         }
 

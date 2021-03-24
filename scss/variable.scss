@@ -10,6 +10,7 @@
       "before": #2338B1,
       "h1-color": #ce9e62,
       "demo-color": #2338B1,
+      "about": #0f1626,
       "desk-padding": 6em,
       "pry-radius": 5px,
       "pry-padding": 2em,
@@ -26,15 +27,16 @@
 :root.light{
    $colors:(
       "deep-bg": #fff,
-      "dark-bg":  aliceblue,
+      "dark-bg":  #F9FBFF,
       "deep-gold": #ce9e62,
       "pry-font-color": #273347,
       "headings": #1F2C46,
       "icons-color": #1F2C46,
       "btn-bg": #143786,
-      "before": aliceblue,
+      "before": #DEE9FF,
       "h1-color": #1c2d8b,
       "demo-color": #eaeaeb,
+      "about": #DEE9FF
       /* "icon-shadow": drop-shadow(0px 4px 0px rgba(0,0,0,.2)) */
    );
 
