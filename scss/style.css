@@ -10,6 +10,7 @@
   --before: #2338B1 ;
   --h1-color: #ce9e62 ;
   --demo-color: #2338B1 ;
+  --about: #0f1626 ;
   --desk-padding: 6em ;
   --pry-radius: 5px ;
   --pry-padding: 2em ;
@@ -19,15 +20,16 @@
 
 :root.light {
   --deep-bg: #fff ;
-  --dark-bg: aliceblue ;
+  --dark-bg: #F9FBFF ;
   --deep-gold: #ce9e62 ;
   --pry-font-color: #273347 ;
   --headings: #1F2C46 ;
   --icons-color: #1F2C46 ;
   --btn-bg: #143786 ;
-  --before: aliceblue ;
+  --before: #DEE9FF ;
   --h1-color: #1c2d8b ;
   --demo-color: #eaeaeb ;
+  --about: #DEE9FF ;
 }
 
 @font-face {
@@ -407,7 +409,7 @@ main.content section {
   margin: 4rem 0;
 }
 main.content #about {
-  background-color: var(--deep-bg);
+  background-color: var(--about);
   margin: 0 -2em;
   padding: 4em 2em;
   display: flex;
@@ -429,6 +431,8 @@ main.content #about h2 {
 main.content #about span {
   display: block;
   margin: 1rem 0;
+  font-size: 1.1rem;
+  font-weight: 500;
 }
 main.content #services {
   background-color: var(--dark-bg);
@@ -458,7 +462,7 @@ main.content #services::after {
 main.content #services h2 {
   font-size: 2rem;
   margin-bottom: var(--margin-bottom);
-  color: var(--deep-gold);
+  color: var(--h1-color);
 }
 main.content #services > div {
   position: relative;
@@ -495,7 +499,7 @@ main.content #services > div:hover::after {
   transform: rotate(360deg) scale(0.8);
 }
 main.content #services .web-dev i {
-  color: #2338B1;
+  color: #ADCB50;
 }
 main.content #services .web-sec i {
   color: #e24c4c;
@@ -858,20 +862,23 @@ header.banner .hamburger {
   }
   main.content #about {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 250px 350px;
     justify-content: center;
     align-items: start;
-    gap: 60px;
+    gap: 50px;
     padding: 4em 2em;
     margin: 0;
   }
   main.content #about .about_text {
     text-align: left;
-    align-self: center;
-    width: 34ch;
+    font-size: 0.9rem;
   }
   main.content #about h2 {
-    margin-bottom: 0;
+    grid-column: 1/-1;
+    margin-bottom: 3rem;
+  }
+  main.content #about img {
+    align-self: center;
   }
   main.content #testimonial,
 main.content #portfolio,
