@@ -426,15 +426,18 @@ main.content {
             filter: var(--icon-shadow);  
         }
 
-
-        li::before {
-            content: "\2022";
-            width: 20px;
-            height: 10px;
-            color: red;
+        li {
             font-size: 0.8rem;
-            font-weight: 900;
-            margin-right: 8px;
+            font-weight: 600;
+            color: #6272ce;
+
+            &::before {
+                content: "\2022";
+                color: red;
+                font-size: 1rem;
+                font-weight: 900;
+                margin-right: 8px;
+            }
         }
 
     }
