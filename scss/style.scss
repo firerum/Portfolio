@@ -405,13 +405,13 @@ main.content {
         .design {
             text-align: left;
             position: relative;
-            padding: 1em 2em;
+            padding: 2em 2em;
             margin-bottom: 1rem;
             height: 100%;
             width: 100%;
             border-radius: var(--pry-radius);
             background-color: var(--deep-bg);
-            clip-path: polygon(10px 0px, 10px 10px, 0px 15px, 10px 25px, 10px 100%, 100% 100%, 100% 0% );
+            clip-path: polygon(7px 0px, 7px 10px, 0px 15px, 7px 25px, 7px 100%, 100% 100%, 100% 0% );
             position: relative;
         }
 
@@ -422,8 +422,19 @@ main.content {
         }
 
         i {
-            font-size: 2.3rem;
+            font-size: 2.7rem;
             filter: var(--icon-shadow);  
+        }
+
+
+        li::before {
+            content: "\2022";
+            width: 20px;
+            height: 10px;
+            color: red;
+            font-size: 0.8rem;
+            font-weight: 900;
+            margin-right: 8px;
         }
 
     }
@@ -1003,7 +1014,7 @@ footer.glossary {
     main.content {
 
         #services {
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
         }
 
         #portfolio {
