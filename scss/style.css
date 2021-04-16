@@ -404,10 +404,12 @@ main.content {
   padding: 4em var(--pry-padding);
   padding-bottom: 0;
   text-align: center;
+  scroll-snap-type: y mandatory;
 }
 main.content section {
   padding: 1em;
   margin: 4rem 0;
+  scroll-snap-align: center;
 }
 main.content #about {
   background-color: var(--about);
